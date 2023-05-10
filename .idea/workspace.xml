@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="domæne">
-      <change afterPath="$PROJECT_DIR$/doc/classDiagram.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/domain_model.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/domain_model.puml" afterDir="false" />
-    </list>
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="klassediagram" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,9 +55,21 @@
       <workItem from="1683706800625" duration="88000" />
       <workItem from="1683707660168" duration="1627000" />
     </task>
+    <task id="LOCAL-00001" summary="klassediagram">
+      <created>1683712067303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683712067303</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="klassediagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="klassediagram" />
   </component>
 </project>
