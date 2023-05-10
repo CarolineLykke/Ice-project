@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+!pragma layout smetana
+
+class dashboard
+class carHandler
+class customerHandler
+class userHandler
+abstract user
+class mechanic
+class foreman
+class bookingsystem
+class communications
+class car
+class customer
+
+car : - int id
+car : - String make
+car : - String model
+car : - int year
+car : - int km
+car : + car(id, make, model, year, km)
+car : + int getId()
+car : + String getMake()
+car : + String getModel()
+car : + int getYear()
+car : + int getKm()
+
+customer : - int id
+customer : - String name
+customer : - String lastname
+customer : - int phoneNumber
+customer : - String address
+customer : + customer(id, name, lastname, phoneNumber, address)
+customer : + int getId()
+customer : + String getName()
+customer : + String getLastname()
+customer : + int getPhoneNumber()
+customer : + String getAddress()
+
+user : - int id
+user : - String username
+user : - String password
+user : - String rights
+user : + user(id, username, password, rights)
+user : + int getId()
+user : + String getUsername()
+user : + String getPassword()
+user : + String getRights()
+
+dashboard *-- bookingsystem
+bookingsystem *-- foreman
+foreman *-- communications
+communications *-- mechanic
+
+customerHandler *-- customer
+carHandler *-- car
+communications *-- carHandler
+communications *-- customerHandler
+communications *-- userHandler
+user *-- customer
+user *-- foreman
+user *-- mechanic
+userHandler *-- user
+
+@enduml
