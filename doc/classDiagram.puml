@@ -4,7 +4,6 @@
 
 class Dashboard
 class CarHandler
-class CustomerHandler
 class UserHandler
 abstract User
 class Mechanic
@@ -71,7 +70,6 @@ Communications *-- Mechanic
 
 CarHandler *-- Car
 Communications *-- CarHandler
-Communications *-- CustomerHandler
 Communications *-- UserHandler
 User <|-- Customer
 User <|-- Foreman

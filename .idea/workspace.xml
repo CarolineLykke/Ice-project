@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="klassediagram" />
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="klassediagram">
+      <change afterPath="$PROJECT_DIR$/src/Bookingsystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CarHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Communications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Foreman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Mechanic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Userhandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Ice-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ice-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/classDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/classDiagram.puml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -62,7 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683712067303</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="klassediagram">
+      <created>1683712131346</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683712131346</updated>
+    </task>
+    <task id="LOCAL-00003" summary="klassediagram">
+      <created>1683713848953</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683713848953</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
