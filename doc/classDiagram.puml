@@ -2,65 +2,80 @@
 'https://plantuml.com/class-diagram
 !pragma layout smetana
 
-class dashboard
-class carHandler
-class customerHandler
-class userHandler
-abstract user
-class mechanic
-class foreman
-class bookingsystem
-class communications
-class car
-class customer
+class Dashboard
+class CarHandler
+class CustomerHandler
+class UserHandler
+abstract User
+class Mechanic
+class Foreman
+class Bookingsystem
+class Communications
+class Car
+class Customer
 
-car : - int id
-car : - String make
-car : - String model
-car : - int year
-car : - int km
-car : + car(id, make, model, year, km)
-car : + int getId()
-car : + String getMake()
-car : + String getModel()
-car : + int getYear()
-car : + int getKm()
+Car : - int id
+Car : - String make
+Car : - String model
+Car : - int year
+Car : - int km
+Car : + Car(id, make, model, year, km)
+Car : + int getId()
+Car : + String getMake()
+Car : + String getModel()
+Car : + int getYear()
+Car : + int getKm()
 
-customer : - int id
-customer : - String name
-customer : - String lastname
-customer : - int phoneNumber
-customer : - String address
-customer : + customer(id, name, lastname, phoneNumber, address)
-customer : + int getId()
-customer : + String getName()
-customer : + String getLastname()
-customer : + int getPhoneNumber()
-customer : + String getAddress()
 
-user : - int id
-user : - String username
-user : - String password
-user : - String rights
-user : + user(id, username, password, rights)
-user : + int getId()
-user : + String getUsername()
-user : + String getPassword()
-user : + String getRights()
+Customer : - String name
+Customer : - String lastname
+Customer : - int phoneNumber
+Customer : - String address
+Customer : + Customer(id, username, password, rights, name, lastname, phoneNumber, address)
+Customer : + String getName()
+Customer : + String getLastname()
+Customer : + int getPhoneNumber()
+Customer : + String getAddress()
 
-dashboard *-- bookingsystem
-bookingsystem *-- foreman
-foreman *-- communications
-communications *-- mechanic
+User : - int id
+User : - String username
+User : - String password
+User : - String rights
+User : + User(id, username, password, rights)
+User : + int getId()
+User : + String getUsername()
+User : + String getPassword()
+User : + String getRights()
 
-customerHandler *-- customer
-carHandler *-- car
-communications *-- carHandler
-communications *-- customerHandler
-communications *-- userHandler
-user *-- customer
-user *-- foreman
-user *-- mechanic
-userHandler *-- user
+
+UserHandler : ArrayList<User> users
+UserHandler : + boolean login()
+UserHandler : + boolean createUser()
+UserHandler : + void loadUsers()
+UserHandler : + void saveUsers()
+UserHandler : + boolean isUserNameValid()
+UserHandler : + boolean isValidPassword()
+
+Mechanic : + Mechanic(id, username, password, rights)
+
+Foreman : + Foreman(id, username, password, rights)
+
+CarHandler : + carDatabase()
+CarHandler : ArrayList<Car> cars
+
+Dashboard *-- Bookingsystem
+Bookingsystem *-- Foreman
+Foreman *-- Communications
+Communications *-- Mechanic
+
+
+CarHandler *-- Car
+Communications *-- CarHandler
+Communications *-- CustomerHandler
+Communications *-- UserHandler
+User <|-- Customer
+User <|-- Foreman
+User <|-- Mechanic
+UserHandler *-- User
 
 @enduml
