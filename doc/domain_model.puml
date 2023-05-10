@@ -1,6 +1,29 @@
 @startuml
 'https://plantuml.com/class-diagram
 !pragma layout smetana
+object dashboard
+object carHandler
+object customerHandler
+object userHandler
+object user
+object mechanic
+object foreman
+object bookingsystem
+object communications
+object car
+object customer
+
+dashboard *-- bookingsystem
+bookingsystem *-- foreman
+foreman *-- communications
+communications *-- mechanic
+
+userHandler *-- user
+customerHandler *-- customer
+carHandler *-- car
+communications *-- carHandler
+communications *-- customerHandler
+communications *-- userHandler
 
 
 @enduml
