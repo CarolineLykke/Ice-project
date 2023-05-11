@@ -15,7 +15,7 @@ public class Userhandler {
     private static String currentId;
     private static String currentRights;
 
-    public boolean login(String username, String password, String id, String rights) {
+    public boolean login(String username, String password, String Id, String rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -31,7 +31,7 @@ public class Userhandler {
         return false;
     }
 
-    public boolean createUser(String username, String password, String id, String rights) {
+    public boolean createUser(String username, String password, String Id, String rights) {
         if(!isValid(password)){
             return false;
         } if(!isUserNameValid(username)){
@@ -74,7 +74,7 @@ public class Userhandler {
                 String username = rs.getString("UserName");
                 String password = rs.getString("Password");
                 String id = rs.getString("Id");
-                String rights = rs.getRights("rights");
+                String rights = rs.getRights("Rights");
                 users.add(new User(username,password,id,rights));
             }
             //STEP 5: Clean-up environment
