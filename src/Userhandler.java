@@ -3,11 +3,11 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Userhandler {
-    static final String DB_URL = "jdbc:mysql://localhost/Streaming";
+    static final String DB_URL = "sql7.freemysqlhosting.net";
 
     //  Database credentials
-    static final String USER = "root";
-    static final String PASS = "123456";
+    static final String USER = "sql7617247";
+    static final String PASS = "nQyBL7eZqc";
     ArrayList<User> users = new ArrayList<>();
     File file;
 
