@@ -44,7 +44,7 @@ public class Userhandler {
             }
         }
 
-        users.add(new User(username, password, id, rights));
+        users.add(new User(username, password, Id, rights));
         return true;
     }
 
