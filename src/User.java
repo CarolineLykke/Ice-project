@@ -1,17 +1,17 @@
 public abstract class User {
-    private int id;
+    private String id;
     private String username;
     private String password;
     private String rights;
 
-    public User(int id, String username, String password, String rights) {
+    public User(String id, String username, String password, String rights) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.rights = rights;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
