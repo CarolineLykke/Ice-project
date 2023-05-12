@@ -62,7 +62,7 @@ public class Userhandler {
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
-            String sql = "SELECT * FROM streaming.users";
+            String sql = "SELECT * FROM sql7617247.users";
             stmt = conn.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -71,10 +71,10 @@ public class Userhandler {
             while (rs.next()) {
                 //Retrieve by column name
 
-                String username = rs.getString("UserName");
-                String password = rs.getString("Password");
-                String id = rs.getString("Id");
-                String rights = rs.getRights("Rights");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String id = rs.getString("id");
+                int rights = rs.getRights("rights");
                 users.add(new User(username,password,id,rights));
             }
             //STEP 5: Clean-up environment
