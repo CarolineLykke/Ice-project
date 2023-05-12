@@ -5,17 +5,17 @@ import java.util.List;
 public class Customer  {
 
     private String id;
-    private int rights;
+    private String email;
     private String name;
-    private String lastname;
+    private String lastName;
     private int phoneNumber;
     private String address;
 
-    public Customer(String id, int rights, String name, String lastname, int phoneNumber, String address) {
+    public Customer(String id, String email, String name, String lastName, int phoneNumber, String address) {
         this.id = id;
-        this.rights = rights;
+        this.email = email;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
@@ -24,8 +24,8 @@ public class Customer  {
         return id;
     }
 
-    public int getRights() {
-        return rights;
+    public String getEmail() {
+        return email;
     }
 
     public String getName() {
@@ -33,7 +33,7 @@ public class Customer  {
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
     public int getPhoneNumber() {
@@ -67,12 +67,13 @@ public class Customer  {
             while (rs.next()) {
                 //Retrieve by column name
                 String id = rs.getString("id");
-                int rights = rs.getint("right");
-                String  = rs.getString("category");
-                String rating = rs.getString("Rating");
-                String id = rs.getString("id");
+                String email = rs.getString("email");
+                String name = rs.getString("name");
+                String lastName = rs.getString("lastName");
+                int phoneNumber = rs.getInt("phoneNumber");
+                String address = rs.getString("address");
                 //Create movie object and add to list
-                Customer customers = new Customer();
+                Customer customers = new Customer(id, email, name, lastName, phoneNumber, address);
                 Customer.add(customers);
             }
 
