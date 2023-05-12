@@ -1,10 +1,10 @@
-public abstract class User {
+public class User {
     private String Id;
     private String username;
     private String password;
-    private String rights;
+    private int rights;
 
-    public User(String id, String username, String password, String rights) {
+    public User(String id, String username, String password, int rights) {
         this.Id = id;
         this.username = username;
         this.password = password;
@@ -23,7 +23,7 @@ public abstract class User {
         return password;
     }
 
-    public String getRights() {
+    public int getRights() {
         return rights;
     }
 }

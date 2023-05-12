@@ -1,5 +1,5 @@
 public class Foreman extends User{
-    public Foreman(int id, String username, String password, String rights) {
+    public Foreman(String id, String username, String password, int rights) {
         super(id, username, password, rights);
     }
 }

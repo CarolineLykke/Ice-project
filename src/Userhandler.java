@@ -8,14 +8,14 @@ public class Userhandler {
     //  Database credentials
     static final String USER = "sql7617247";
     static final String PASS = "nQyBL7eZqc";
-    ArrayList<User> users = new ArrayList<>();
+    static ArrayList<User> users = new ArrayList<>();
     File file;
 
     private static String currentUser;
     private static String currentId;
-    private static String currentRights;
+    private static int currentRights;
 
-    public boolean login(String username, String password, String Id, String rights) {
+    public boolean login(String username, String password, String Id, int rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -31,7 +31,7 @@ public class Userhandler {
         return false;
     }
 
-    public boolean createUser(String username, String password, String Id, String rights) {
+    public static boolean createUser(String username, String password, String Id, int rights) {
         if(!isValid(password)){
             return false;
         } if(!isUserNameValid(username)){
@@ -74,7 +74,7 @@ public class Userhandler {
                 String username = rs.getString("UserName");
                 String password = rs.getString("Password");
                 String id = rs.getString("Id");
-                String rights = rs.getRights("Rights");
+                int rights = rs.getInt("Rights");
                 users.add(new User(username,password,id,rights));
             }
             //STEP 5: Clean-up environment
@@ -133,7 +133,7 @@ public class Userhandler {
 
 
             conn.close();
-            DashBoard.setupDashboard();
+            //DashBoard.setupDashboard();
         }
         catch (Exception e)
         {
@@ -144,7 +144,7 @@ public class Userhandler {
     }
 
 
-    public boolean isUserNameValid(String username) {
+    public static boolean isUserNameValid(String username) {
         if(username == null || username.length() > 20 || username.equals("")) {
             return false;
         }
@@ -153,7 +153,7 @@ public class Userhandler {
         }
     }
 
-    public boolean isValid(String password){
+    public static boolean isValid(String password){
         if(password == null || password.length() < 8 || password.equals("")) {
             return false;
         }
@@ -168,7 +168,7 @@ public class Userhandler {
         return currentId;
     }
 
-    public static String getRights(){
+    public static int getRights(){
         return currentRights;
     }
 

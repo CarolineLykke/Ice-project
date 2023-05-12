@@ -1,5 +1,5 @@
 public class Mechanic extends User{
-    public Mechanic(int id, String username, String password, String rights) {
+    public Mechanic(String id, String username, String password, int rights) {
         super(id, username, password, rights);
     }
 
