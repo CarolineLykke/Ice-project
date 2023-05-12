@@ -3,7 +3,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Userhandler {
-    static final String DB_URL = "sql7.freemysqlhosting.net";
+    static final String DB_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7617247";
 
     //  Database credentials
     static final String USER = "sql7617247";
@@ -15,7 +15,7 @@ public class Userhandler {
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String username, String password, String Id, int rights) {
+    public boolean login(String id, String username, String password, int rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -54,7 +54,7 @@ public class Userhandler {
         PreparedStatement stmt = null;
         try {
             //STEP 1: Register JDBC driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading users");
@@ -62,7 +62,7 @@ public class Userhandler {
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
-            String sql = "SELECT * FROM streaming.users";
+            String sql = "SELECT * FROM users";
             stmt = conn.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery(sql);
@@ -71,10 +71,10 @@ public class Userhandler {
             while (rs.next()) {
                 //Retrieve by column name
 
-                String username = rs.getString("UserName");
-                String password = rs.getString("Password");
-                String id = rs.getString("Id");
-                int rights = rs.getInt("Rights");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+                String id = rs.getString("id");
+                int rights = rs.getInt("rights");
                 users.add(new User(username,password,id,rights));
             }
             //STEP 5: Clean-up environment

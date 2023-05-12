@@ -16,17 +16,16 @@ public class TextUI {
         System.out.println("Hello. Would you like to: " + "\n" + "1) Log in or" + "\n" + "2) Create user?" + "\n" + "Please write 1 or 2 and press Enter:");
         return scanner.nextLine();
     }
-
     //DashBoard dashBoard = new DashBoard();
     public void loginMenu() {
         System.out.println("Please enter your username: ");
-        String userName = scanner.nextLine();
+        String username = scanner.nextLine();
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine();
-        String id = Integer.toString(counter()); ////(UUID.randomUUID().toString();)
+      String id ="1";
         int rights = 1;
-        if (userhandler.login(userName, password, id, rights)) {
-            System.out.println("Welcome " + userName);
+        if (userhandler.login(username, password, id, rights)) {
+            System.out.println("Welcome " + username);
             //dashBoard.setupDashboard();
         } else {
             System.out.println("Sorry, the username or password is incorrect");
@@ -40,7 +39,7 @@ public class TextUI {
         String userName = scanner.nextLine();
         System.out.println("Please enter a password: ");
         String password = scanner.nextLine();
-        String id = Integer.toString(counter());
+        String id = "1";
         int rights = 1;
         if (Userhandler.createUser(userName, password, id, rights)) {
             System.out.println("Welcome " + userName);
@@ -49,12 +48,6 @@ public class TextUI {
             System.out.println("Sorry, the username or password can not be used try agin:");
             createUserMenu();
         }
-    }
-
-    public int counter() {
-        Random rn = new Random();
-        int answer = rn.nextInt(100) + 1;
-        return answer;
     }
 
     public String startMenu() {
