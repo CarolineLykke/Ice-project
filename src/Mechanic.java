@@ -16,9 +16,9 @@ public class Mechanic{
     // status of mechanic
    public boolean getMechanicStatus() {
         if(status) {
-           System.out.println(user.getUsername() + "er ledig");
+           System.out.println(user.getUsername() + " er ledig");
        } else if (!status) {
-            System.out.println(user.getUsername() + "er ikke ledig");
+            System.out.println(user.getUsername() + " er ikke ledig");
         }
         return status;
    }
