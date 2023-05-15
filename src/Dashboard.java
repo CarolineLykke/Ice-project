@@ -5,6 +5,7 @@ public class Dashboard {
         static TextUI textUI = new TextUI(userHandler);
         //static MovieHandler movieHandler = new MovieHandler();
         static CustomerHandler customerHandler = new CustomerHandler();
+        static CarHandler carHandler = new CarHandler();
 
 
 
@@ -15,11 +16,13 @@ public class Dashboard {
             while (true) {
                 switch (userChoice) {
                     case "1":
-
+                        carHandler.createCar();
+                        carHandler.savecars();
                         break;
 
                     case "2":
-                        ;
+                        carHandler.readCarFromDatabase();
+                        carHandler.showAllCars();
                         break;
 
                     case "3":

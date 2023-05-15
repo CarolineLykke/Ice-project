@@ -1,21 +1,21 @@
 public class Car {
-    private int id;
+    //private int id;
     private String make;
     private String model;
-    private int year;
+    private String regnr;
     private int km;
 
-    public Car(int id, String make, String model, int year, int km) {
-        this.id = id;
+    public Car(String make, String model, String regnr, int km) {
+        //this.id = id;
         this.make = make;
         this.model = model;
-        this.year = year;
+        this.regnr = regnr;
         this.km = km;
     }
 
-    public int getId() {
+    /*public int getId() {
         return id;
-    }
+    }*/
 
     public String getMake() {
         return make;
@@ -25,8 +25,8 @@ public class Car {
         return model;
     }
 
-    public int getYear() {
-        return year;
+    public String getRegnr() {
+        return regnr;
     }
 
     public int getKm() {
