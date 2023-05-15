@@ -104,4 +104,6 @@ public class Customer  {
 
         return customers;
     }
+    //se min bil
+    //hvad er der sket med min bil
 }
