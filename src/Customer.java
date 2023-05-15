@@ -54,7 +54,7 @@ public class Customer  {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
@@ -73,8 +73,8 @@ public class Customer  {
                 int phoneNumber = rs.getInt("phoneNumber");
                 String address = rs.getString("address");
                 //Create movie object and add to list
-                Customer customers = new Customer(id, email, name, lastName, phoneNumber, address);
-                Customer.add(customers);
+               // Customer customers = new Customer(id, email, name, lastName, phoneNumber, address);
+               // Customer.add(customers);
             }
 
             //STEP 5: Clean-up environment
@@ -114,7 +114,7 @@ public class Customer  {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading SavedMovies");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
@@ -130,7 +130,7 @@ public class Customer  {
                 String userID = rs.getString("UserID");
                 String movieID = rs.getString("name");
 
-                if (UserHandler.getId().equals(userID)) {
+                if (Userhandler.getId().equals(userID)) {
                     System.out.println(movieID);
                 }
             }
