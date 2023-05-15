@@ -22,4 +22,8 @@ public class Mechanic{
         }
         return status;
    }
+
+   public String getUsername() {
+        return username;
+   }
 }
