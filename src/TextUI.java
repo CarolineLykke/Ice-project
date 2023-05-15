@@ -65,6 +65,15 @@ public class TextUI {
         System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers");
         return scanner.nextLine();
     }
+    public String startMenuMechanic() {
+        System.out.println("Hey Mechanic: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Update your status" + "\n" + "3: See other Mechanics" + "\n" + "5: Show all Customers");
+        return scanner.nextLine();
+    }
+
+    public String startMenuCustomer() {
+        System.out.println("Hey, Customer: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See status" + "\n" + "2: See car data");
+        return scanner.nextLine();
+    }
 
     public void backToMenu() {
         System.out.println("Press 1 to go back to the start menu, or 2 to close the application.");
@@ -88,15 +97,5 @@ public class TextUI {
                 backToMenu();
                 break;
         }
-    }
-
-    public String startMenuMechanic() {
-        System.out.println("Hey Mechanic: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Update your status" + "\n" + "3: See other Mechanics" + "\n" + "5: Show all Customers");
-        return scanner.nextLine();
-    }
-
-    public String startMenuCustomer() {
-        System.out.println("Hey, Customer: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See status" + "\n" + "2: See car data");
-        return scanner.nextLine();
     }
 }

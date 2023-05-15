@@ -13,7 +13,7 @@ public class Dashboard {
             while (true) {
                 switch (userChoice) {
                     case "1":
-                        ;
+                        System.out.println("Hej");;
                         break;
 
                     case "2":

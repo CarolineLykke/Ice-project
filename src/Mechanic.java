@@ -1,6 +1,9 @@
 public class Mechanic extends User{
-    public Mechanic(String id, String username, String password, int rights) {
+
+    boolean Status;
+    public Mechanic(String id, String username, String password, int rights, boolean status) {
         super(id, username, password, rights);
+        this.Status=status;
     }
 
 }
