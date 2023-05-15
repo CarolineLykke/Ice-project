@@ -1,6 +1,4 @@
-import java.util.Random;
 import java.util.Scanner;
-import java.util.UUID;
 
 
 public class TextUI {
@@ -27,12 +25,11 @@ public class TextUI {
         if (userhandler.login(username, password, id, rights)) {
             System.out.println("Welcome " + username);
             if (Userhandler.getRights()==1){
-                System.out.println("Du er admin");
-                Dashboard.setupDashboard();
+                Dashboard.setupDashboardAdmin();
             } else if (Userhandler.getRights() == 2) {
-                System.out.println("Du er mekaniker");
+                Dashboard.setupDashboardMechanic();
             } else if (Userhandler.getRights() == 3) {
-                System.out.println("Du er kunde");
+                Dashboard.setupDashboardCustomer();
             }
 
         } else {
@@ -65,7 +62,7 @@ public class TextUI {
     }
 
     public String startMenuAdmin() {
-        System.out.println("Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers");
+        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers");
         return scanner.nextLine();
     }
 
@@ -74,7 +71,13 @@ public class TextUI {
         String choice = scanner.nextLine();
         switch (choice) {
             case "1":
-                Dashboard.setupDashboard();
+                if (Userhandler.getRights()==1) {
+                    Dashboard.setupDashboardAdmin();
+                } else if (Userhandler.getRights()==2) {
+                    Dashboard.setupDashboardMechanic();
+                } else if (Userhandler.getRights()==3) {
+                    Dashboard.setupDashboardCustomer();
+                }
                 break;
             case "2":
                 System.out.println("Closing the application...");
@@ -87,4 +90,13 @@ public class TextUI {
         }
     }
 
+    public String startMenuMechanic() {
+        System.out.println("Hey Mechanic: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Update your status" + "\n" + "3: See other Mechanics" + "\n" + "5: Show all Customers");
+        return scanner.nextLine();
+    }
+
+    public String startMenuCustomer() {
+        System.out.println("Hey, Customer: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See status" + "\n" + "2: See car data");
+        return scanner.nextLine();
+    }
 }

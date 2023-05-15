@@ -6,7 +6,7 @@ public class Dashboard {
         //static MovieHandler movieHandler = new MovieHandler();
 
 
-        public static void setupDashboard(){
+        public static void setupDashboardAdmin(){
 
             ////Dashboard
             String userChoice = textUI.startMenuAdmin();
@@ -34,4 +34,57 @@ public class Dashboard {
             }
         }
 
+    public static void setupDashboardMechanic() {
+        ////Dashboard
+        String userChoice = textUI.startMenuMechanic();
+        while (true) {
+            switch (userChoice) {
+                case "1":
+                    ;
+                    break;
+
+                case "2":
+                    ;
+                    break;
+
+                case "3":
+                    ;
+                    break;
+                case "4":
+                    ;
+                    break;
+                case "5":
+                    ;
+                    break;
+            }
+            textUI.backToMenu();
+        }
     }
+
+    public static void setupDashboardCustomer() {
+        ////Dashboard
+        String userChoice = textUI.startMenuCustomer();
+        while (true) {
+            switch (userChoice) {
+                case "1":
+                    ;
+                    break;
+
+                case "2":
+                    ;
+                    break;
+
+                case "3":
+                    ;
+                    break;
+                case "4":
+                    ;
+                    break;
+                case "5":
+                    ;
+                    break;
+            }
+            textUI.backToMenu();
+        }
+    }
+}
