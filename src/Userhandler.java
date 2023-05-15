@@ -31,27 +31,6 @@ public class Userhandler {
         return false;
     }
 
-
-
-
-
-
-    /*public boolean login(String username, String password, String id, int rights) {
-        if (username == null || password == null) {
-            return false;
-        }
-        for (User user : users) {
-            if (user.getUsername() != null && user.getPassword() != null
-                    && user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                currentUser = user.getUsername();
-                currentId = user.getId();
-                currentRights = user.getRights();
-                return true;
-            }
-        }
-        return false;
-    } */
-
     public static boolean createUser(String username, String password, String Id, int rights) {
         if(!isValid(password)){
             return false;

@@ -28,12 +28,13 @@ public class TextUI {
             System.out.println("Welcome " + username);
             if (Userhandler.getRights()==1){
                 System.out.println("Du er admin");
+                Dashboard.setupDashboard();
             } else if (Userhandler.getRights() == 2) {
                 System.out.println("Du er mekaniker");
             } else if (Userhandler.getRights() == 3) {
                 System.out.println("Du er kunde");
             }
-            //dashBoard.setupDashboard();
+
         } else {
             System.out.println("Sorry, the username or password is incorrect");
             loginMenu();
@@ -63,8 +64,8 @@ public class TextUI {
         }
     }
 
-    public String startMenu() {
-        System.out.println("Welcome to Mustafa's movies, you can now choose one of the options" + "\n" + "1: Search for a movie" + "\n" + "2: Search a movie in a specific category" + "\n" + "3: The list of the movies you have watched" + "\n" + "4: The list of the movies you have saved" + "\n" + "5: Show all movies");
+    public String startMenuAdmin() {
+        System.out.println("Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers");
         return scanner.nextLine();
     }
 
@@ -73,7 +74,7 @@ public class TextUI {
         String choice = scanner.nextLine();
         switch (choice) {
             case "1":
-                //DashBoard.setupDashboard();
+                Dashboard.setupDashboard();
                 break;
             case "2":
                 System.out.println("Closing the application...");
