@@ -123,6 +123,7 @@ public class Userhandler {
                 stmt.setString ( 2,user.getPassword());
             }
 
+
             // execute the preparedstatement
             stmt.executeUpdate();
 

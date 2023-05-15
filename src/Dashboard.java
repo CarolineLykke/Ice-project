@@ -4,6 +4,7 @@ public class Dashboard {
         static Userhandler userHandler = new Userhandler();
         static TextUI textUI = new TextUI(userHandler);
         //static MovieHandler movieHandler = new MovieHandler();
+        static CustomerHandler customerHandler = new CustomerHandler();
 
 
         public static void setupDashboard(){
@@ -13,7 +14,7 @@ public class Dashboard {
             while (true) {
                 switch (userChoice) {
                     case "1":
-                        ;
+
                         break;
 
                     case "2":
@@ -21,7 +22,8 @@ public class Dashboard {
                         break;
 
                     case "3":
-                        ;
+                        customerHandler.createCustomer();
+                        customerHandler.saveUsers();
                         break;
                     case "4":
                         ;

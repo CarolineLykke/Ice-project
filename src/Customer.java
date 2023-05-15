@@ -8,15 +8,14 @@ public class Customer  {
     //  Database credentials
     static final String USER = "sql7617247";
     static final String PASS = "nQyBL7eZqc";
-    private String id;
+
     private String email;
     private String name;
     private String lastName;
     private int phoneNumber;
     private String address;
 
-    public Customer(String id, String email, String name, String lastName, int phoneNumber, String address) {
-        this.id = id;
+    public Customer(String email, String name, String lastName, int phoneNumber, String address) {
         this.email = email;
         this.name = name;
         this.lastName = lastName;
@@ -24,9 +23,6 @@ public class Customer  {
         this.address = address;
     }
 
-    public String getId() {
-        return id;
-    }
 
     public String getEmail() {
         return email;
@@ -48,6 +44,7 @@ public class Customer  {
         return address;
     }
 
+    //se kunder
     private static List<Customer> readCustomerFromDatabase() {
         List<Customer> customers = new ArrayList<>();
         Connection conn = null;
@@ -62,7 +59,7 @@ public class Customer  {
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
-            String sql = "SELECT * FROM movies";
+            String sql = "SELECT * FROM customer";
             stmt = conn.prepareStatement(sql);
 
             ResultSet rs = stmt.executeQuery();
@@ -109,6 +106,7 @@ public class Customer  {
         return customers;
     }
 
+    //se ændringer på bilen
     public static void getChangesToTheCar() {
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -164,6 +162,5 @@ public class Customer  {
 
         }
     }
-    //se min bil
 
 }
