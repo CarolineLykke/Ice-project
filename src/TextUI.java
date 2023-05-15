@@ -22,10 +22,17 @@ public class TextUI {
         String username = scanner.nextLine();
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine();
-      String id ="1";
-        int rights = 1;
+        String id = Userhandler.getId();
+        int rights = Userhandler.getRights();
         if (userhandler.login(username, password, id, rights)) {
             System.out.println("Welcome " + username);
+            if (Userhandler.getRights()==1){
+                System.out.println("Du er admin");
+            } else if (Userhandler.getRights() == 2) {
+                System.out.println("Du er mekaniker");
+            } else if (Userhandler.getRights() == 3) {
+                System.out.println("Du er kunde");
+            }
             //dashBoard.setupDashboard();
         } else {
             System.out.println("Sorry, the username or password is incorrect");
@@ -36,14 +43,20 @@ public class TextUI {
 
     public void createUserMenu() {
         System.out.println("Please enter a username: ");
-        String userName = scanner.nextLine();
+        String username = scanner.nextLine();
         System.out.println("Please enter a password: ");
         String password = scanner.nextLine();
-        String id = "1";
-        int rights = 1;
-        if (Userhandler.createUser(userName, password, id, rights)) {
-            System.out.println("Welcome " + userName);
-
+        String id = Userhandler.getId();
+        int rights = Userhandler.getRights();
+        if (userhandler.login(username, password, id, rights)) {
+            System.out.println("Welcome " + username);
+            if (Userhandler.getRights()==1){
+                System.out.println("Du har oprettet en admin");
+            } else if (Userhandler.getRights() == 2) {
+                System.out.println("Du har oprettet en mekaniker");
+            } else if (Userhandler.getRights() == 3) {
+                System.out.println("Du har oprettet en kunde");
+            }
         } else {
             System.out.println("Sorry, the username or password can not be used try agin:");
             createUserMenu();

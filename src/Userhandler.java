@@ -15,7 +15,7 @@ public class Userhandler {
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String id, String username, String password, int rights) {
+    public boolean login(String username, String password, String id, int rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -30,6 +30,27 @@ public class Userhandler {
         }
         return false;
     }
+
+
+
+
+
+
+    /*public boolean login(String username, String password, String id, int rights) {
+        if (username == null || password == null) {
+            return false;
+        }
+        for (User user : users) {
+            if (user.getUsername() != null && user.getPassword() != null
+                    && user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                currentUser = user.getUsername();
+                currentId = user.getId();
+                currentRights = user.getRights();
+                return true;
+            }
+        }
+        return false;
+    } */
 
     public static boolean createUser(String username, String password, String Id, int rights) {
         if(!isValid(password)){
@@ -117,7 +138,7 @@ public class Userhandler {
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             // the mysql insert statement
-            String sql = "INSERT INTO streaming.users (UserName,password) VALUES (?, ?)";
+            String sql = "INSERT INTO users (UserName,password) VALUES (?, ?)";
 
             //INSERT INTO streaming.users (UserName,password) VALUES (?, ?)
 
@@ -171,5 +192,7 @@ public class Userhandler {
     public static int getRights(){
         return currentRights;
     }
+
+
 
 }
