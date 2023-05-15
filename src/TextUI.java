@@ -45,8 +45,8 @@ public class TextUI {
         System.out.println("Please enter a password: ");
         String password = scanner.nextLine();
         String id = Userhandler.getId();
-        int rights = Userhandler.getRights();
-        if (userhandler.login(username, password, id, rights)) {
+        int rights = 1;
+        if (userhandler.createUser(username, password, id, rights)) {
             System.out.println("Welcome " + username);
             if (Userhandler.getRights()==1){
                 System.out.println("Du har oprettet en admin");

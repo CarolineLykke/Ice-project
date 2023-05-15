@@ -3,7 +3,7 @@ public class Dashboard {
         //// Login Part
         static Userhandler userHandler = new Userhandler();
         static TextUI textUI = new TextUI(userHandler);
-        //static MovieHandler movieHandler = new MovieHandler();
+        static MechanicHandler mechanicHandler = new MechanicHandler();
 
 
         public static void setupDashboardAdmin(){
@@ -17,7 +17,8 @@ public class Dashboard {
                         break;
 
                     case "2":
-                        ;
+                        mechanicHandler.loadMechanicStatus();
+                        mechanicHandler.displayMechanicStatus();
                         break;
 
                     case "3":
