@@ -10,7 +10,7 @@ public class Userhandler {
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String username, String password, String id, int rights) {
+    public boolean login(String username, String password) {
         if (username == null || password == null) {
             return false;
         }
@@ -26,7 +26,7 @@ public class Userhandler {
         return false;
     }
 
-    public static boolean createUser(String username, String password, String Id, int rights) {
+    public static boolean createUser(String username, String password, int rights) {
         if(!isValid(password)){
             return false;
         } if(!isUserNameValid(username)){
@@ -39,7 +39,7 @@ public class Userhandler {
             }
         }
 
-        users.add(new User(username, password, Id, rights));
+        users.add(new User(username, password, rights));
         return true;
     }
 
@@ -70,7 +70,7 @@ public class Userhandler {
                 String password = rs.getString("password");
                 String id = rs.getString("id");
                 int rights = rs.getInt("rights");
-                users.add(new User(username,password,id,rights));
+                users.add(new User(username,password,rights));
             }
             //STEP 5: Clean-up environment
             rs.close();
@@ -98,7 +98,7 @@ public class Userhandler {
         }//end try
     }
 
-    public void saveUsers() {
+    public void saveUsers(int rights) {
         //UserHandler userHandler = new UserHandler();
 
         Connection conn = null;
@@ -112,20 +112,19 @@ public class Userhandler {
             conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             // the mysql insert statement
-            String sql = "INSERT INTO users (UserName,password) VALUES (?, ?)";
-
-            //INSERT INTO streaming.users (UserName,password) VALUES (?, ?)
+            String sql ="INSERT INTO users (username,password,rights) VALUES (?, ?, ?)";
 
             // create the mysql insert preparedstatement
             stmt = conn.prepareStatement(sql);
             for(User user:users){
                 stmt.setString ( 1,user.getUsername());
                 stmt.setString ( 2,user.getPassword());
+                stmt.setInt ( 3,rights);
+
             }
 
-            // execute the preparedstatement
+            // execute the preparedstatemen
             stmt.executeUpdate();
-
 
             conn.close();
             //DashBoard.setupDashboard();
@@ -137,6 +136,7 @@ public class Userhandler {
         }
 
     }
+
 
 
     public static boolean isUserNameValid(String username) {

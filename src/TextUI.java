@@ -22,7 +22,7 @@ public class TextUI {
         String password = scanner.nextLine();
         String id = Userhandler.getId();
         int rights = Userhandler.getRights();
-        if (userhandler.login(username, password, id, rights)) {
+        if (userhandler.login(username, password)) {
             System.out.println("Welcome " + username);
             if (Userhandler.getRights()==1){
                 Dashboard.setupDashboardAdmin();
@@ -46,15 +46,8 @@ public class TextUI {
         String password = scanner.nextLine();
         String id = Userhandler.getId();
         int rights = Userhandler.getRights();
-        if (userhandler.login(username, password, id, rights)) {
+        if (userhandler.createUser(username, password,rights)) {
             System.out.println("Welcome " + username);
-            if (Userhandler.getRights()==1){
-                System.out.println("Du har oprettet en admin");
-            } else if (Userhandler.getRights() == 2) {
-                System.out.println("Du har oprettet en mekaniker");
-            } else if (Userhandler.getRights() == 3) {
-                System.out.println("Du har oprettet en kunde");
-            }
         } else {
             System.out.println("Sorry, the username or password can not be used try agin:");
             createUserMenu();
