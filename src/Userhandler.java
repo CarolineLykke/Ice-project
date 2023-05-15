@@ -10,7 +10,7 @@ public class Userhandler {
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String id, String username, String password, int rights) {
+    public boolean login(String username, String password, String id, int rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -112,7 +112,7 @@ public class Userhandler {
             conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             // the mysql insert statement
-            String sql = "INSERT INTO streaming.users (UserName,password) VALUES (?, ?)";
+            String sql = "INSERT INTO users (UserName,password) VALUES (?, ?)";
 
             //INSERT INTO streaming.users (UserName,password) VALUES (?, ?)
 
@@ -166,5 +166,7 @@ public class Userhandler {
     public static int getRights(){
         return currentRights;
     }
+
+
 
 }
