@@ -7,7 +7,8 @@ public class Dashboard {
         static CustomerHandler customerHandler = new CustomerHandler();
 
 
-        public static void setupDashboard(){
+
+    public static void setupDashboard(){
 
             ////Dashboard
             String userChoice = textUI.startMenuAdmin();
@@ -29,7 +30,8 @@ public class Dashboard {
                         ;
                         break;
                     case "5":
-                        ;
+                        customerHandler.readCustomerFromDatabase();
+                        customerHandler.showAllCustomers();
                         break;
                 }
                 textUI.backToMenu();
