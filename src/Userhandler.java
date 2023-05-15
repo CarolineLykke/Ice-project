@@ -3,11 +3,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class Userhandler {
-    static final String DB_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7617247";
-
-    //  Database credentials
-    static final String USER = "sql7617247";
-    static final String PASS = "nQyBL7eZqc";
     static ArrayList<User> users = new ArrayList<>();
     File file;
 
@@ -58,7 +53,7 @@ public class Userhandler {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading users");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
@@ -114,7 +109,7 @@ public class Userhandler {
             Class.forName("com.mysql.jdbc.Driver");
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading saveusers");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             // the mysql insert statement
             String sql = "INSERT INTO streaming.users (UserName,password) VALUES (?, ?)";
