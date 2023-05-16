@@ -1,5 +1,5 @@
 public class Dashboard {
-
+    static int rights = 0;
         //// Login Part
         static Userhandler userHandler = new Userhandler();
         static TextUI textUI = new TextUI(userHandler);

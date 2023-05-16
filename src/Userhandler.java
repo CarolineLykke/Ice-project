@@ -98,7 +98,7 @@ public class Userhandler {
         }//end try
     }
 
-    public void saveUsers() {
+    public void saveUsers(int rights) {
         //UserHandler userHandler = new UserHandler();
 
         Connection conn = null;
@@ -112,7 +112,7 @@ public class Userhandler {
             conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             // the mysql insert statement
-            String sql = "INSERT INTO users (UserName,password) VALUES (?, ?)";
+            String sql = "INSERT INTO users (UserName,password) VALUES (?, ?,?)";
 
             //INSERT INTO streaming.users (UserName,password) VALUES (?, ?)
 
@@ -121,6 +121,7 @@ public class Userhandler {
             for(User user:users){
                 stmt.setString ( 1,user.getUsername());
                 stmt.setString ( 2,user.getPassword());
+                stmt.setInt ( 3,rights);
             }
 
 
