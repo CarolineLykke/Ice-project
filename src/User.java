@@ -4,9 +4,7 @@ public class User {
     private String password;
     private int rights;
 
-    public User() {
 
-    }
 
 
     public User(String username, String password, int rights) {

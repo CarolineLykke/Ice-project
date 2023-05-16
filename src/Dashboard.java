@@ -6,7 +6,7 @@ public class Dashboard {
         //static MovieHandler movieHandler = new MovieHandler();
 
 
-    public static void setupDashboard(){
+   // public static void setupDashboard(){
         public static void setupDashboardAdmin(){
 
 

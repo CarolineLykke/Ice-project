@@ -39,7 +39,7 @@ public class Userhandler {
             }
         }
 
-        users.add(new User(username, password, Id, rights));
+        users.add(new User(username, password, rights));
         return true;
     }
 
@@ -70,7 +70,7 @@ public class Userhandler {
                 String password = rs.getString("password");
                 String id = rs.getString("id");
                 int rights = rs.getInt("rights");
-                users.add(new User(username,password,id,rights));
+                users.add(new User(username,password,rights));
             }
             //STEP 5: Clean-up environment
             rs.close();
