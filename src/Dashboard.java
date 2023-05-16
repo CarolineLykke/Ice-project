@@ -5,6 +5,7 @@ public class Dashboard {
         static TextUI textUI = new TextUI(userHandler);
         //static MovieHandler movieHandler = new MovieHandler();
         static CarHandler carHandler = new CarHandler();
+    static CustomerHandler customerHandler = new CustomerHandler();
 
    // public static void setupDashboard(){
         public static void setupDashboardAdmin(){

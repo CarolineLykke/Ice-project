@@ -1,16 +1,15 @@
-import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Userhandler {
     static ArrayList<User> users = new ArrayList<>();
-    File file;
+
 
     private static String currentUser;
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String username, String password, String id, int rights) {
+    public boolean login(String username, String password) {
         if (username == null || password == null) {
             return false;
         }
@@ -26,7 +25,7 @@ public class Userhandler {
         return false;
     }
 
-    public static boolean createUser(String username, String password, String Id, int rights) {
+    public static boolean createUser(String username, String password, int rights) {
         if(!isValid(password)){
             return false;
         } if(!isUserNameValid(username)){
