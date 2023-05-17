@@ -17,7 +17,7 @@ public class Dashboard {
             while (true) {
                 switch (userChoice) {
                     case "1":
-                        System.out.println("Hej");;
+                        //tasks
                         break;
 
                     case "2":
@@ -26,23 +26,27 @@ public class Dashboard {
                         break;
 
                     case "3":
-                        customerHandler.getCustomerCar();
+                        customerHandler.createCustomer();
+                        customerHandler.saveUsers();
                         break;
                     case "4":
+                        customerHandler.getCustomerCar();
+                        customerHandler.showAllCustomerCar();
+                    case "5":
+                        customerHandler.getCustomerCar();
+                        customerHandler.showAllCarCustomer();
+                    case "6":
                         rights = 2;
                         textUI.createUserMenu();
                         userHandler.saveUsers(rights);
-
-
-
                         break;
-                    case "5":
+                    case "7":
                         customerHandler.readCustomerFromDatabase();
                         customerHandler.showAllCustomers();
                         ;
                         break;
 
-                    case "6":
+                    case "8":
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
                         ;

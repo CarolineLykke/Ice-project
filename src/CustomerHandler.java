@@ -11,7 +11,7 @@ public class CustomerHandler {
     private static int phoneNumber;
     private static String address;
     static List<Customer> customers = readCustomerFromDatabase();
-    static List<>
+    static List<CustomerCar> ccjoin = getCustomerCar();
 
     Scanner scan = new Scanner(System.in);
     public void createCustomer() {
@@ -157,8 +157,8 @@ public class CustomerHandler {
             //movieMenu.displayMenu(selectedMovies);
         }
     }
-    public List<customerCar> getCustomerCar() {
-        List<customerCar> ccjoin = new ArrayList<>();
+    public static List<CustomerCar> getCustomerCar() {
+        List<CustomerCar> ccjoin = new ArrayList<>();
         Connection conn = null;
         PreparedStatement stmt = null;
         try {
@@ -166,7 +166,7 @@ public class CustomerHandler {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             //STEP 2: Open a connection
-            System.out.println("Connecting to database loading SavedMovies");
+            System.out.println("Connecting to database loading...");
             conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             //STEP 3: Execute a query
@@ -182,6 +182,7 @@ public class CustomerHandler {
 
                 String customerID = rs.getString("id");
                 String customerName = rs.getString("forName");
+                String customerLastName = rs.getString("lastName");
                 String carID = rs.getString("id");
                 String carMake = rs.getString("make");
                 String carModel = rs.getString("model");
@@ -189,13 +190,11 @@ public class CustomerHandler {
                 String carKm = rs.getString("km");
 
 
+                CustomerCar customercar = new CustomerCar(customerID,customerName,customerLastName,carID,carMake,carModel,carRegnr,carKm);
+                ccjoin.add(customercar);
 
-                    System.out.println(customerName + " "+carMake + " "+ carModel + " "+ carRegnr + " "+ carKm);
-                for (int i = 0; i < mechanics.size(); i++) {
-                    Mechanic mechanic = mechanics.get(i);
-                    System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+
                 }
-            }
             //STEP 5: Clean-up environment
             rs.close();
             stmt.close();
@@ -221,62 +220,61 @@ public class CustomerHandler {
             }//end finally try
 
         }
+        return ccjoin;
     }
-    public static void getCarFromCustomer() {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        try {
-            //STEP 1: Register JDBC driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
 
-            //STEP 2: Open a connection
-            System.out.println("Connecting to database loading SavedMovies");
-            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
+    public void showAllCustomerCar() {
+        Scanner customerScanner = new Scanner(System.in);
+        for (int i = 0; i < ccjoin.size(); i++) {
+            CustomerCar customercar = ccjoin.get(i);
+            System.out.println((i + 1) + ". " + ccjoin.get(i).getForName() + " , " + ccjoin.get(i).getCarMake());
+        }
 
-            //STEP 3: Execute a query
-            System.out.println("Creating statement...");
-            String sql = "select * from cars join customer on cars.id=customer.carsid";
-            stmt = conn.prepareStatement(sql);
+        System.out.print("Please enter the number of the Customer you'd like to select to see the car informations: ");
+        int selection = customerScanner.nextInt();
+        customerScanner.nextLine();
 
-            ResultSet rs = stmt.executeQuery(sql);
+        if (selection < 1 || selection > ccjoin.size()) {
+            System.out.println("Invalid Customer number.");
+            return;
+        }
 
-            //STEP 4: Extract data from result set
-            while (rs.next()) {
-                //Retrieve by column name
+        CustomerCar selectedCustomer = ccjoin.get(selection - 1);
+        System.out.println("Selected Customer: " + selectedCustomer.getForName() +  "/n" + "The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
 
-                String customerID = rs.getString("id");
-                String carID = rs.getString("make");
-
-                if (Userhandler.getId().equals(customerID)) {
-                    System.out.println(carID);
-                }
-            }
-            //STEP 5: Clean-up environment
-            rs.close();
-            stmt.close();
-            conn.close();
-        } catch (SQLException se) {
-            //Handle errors for JDBC
-            se.printStackTrace();
-        } catch (Exception e) {
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        } finally {
-            //finally block used to close resources
-            try {
-                if (stmt != null)
-                    stmt.close();
-            } catch (SQLException se2) {
-            }// nothing we can do
-            try {
-                if (conn != null)
-                    conn.close();
-            } catch (SQLException se) {
-                se.printStackTrace();
-            }//end finally try
-
+        if (selectedCustomer.getForName().contains("")) {
+            System.out.println("TEST");
+            //MovieMenu movieMenu = new MovieMenu();
+            //movieMenu.displayMenu(selectedMovies);
         }
     }
+
+    public void showAllCarCustomer() {
+        Scanner customerScanner = new Scanner(System.in);
+        for (int i = 0; i < ccjoin.size(); i++) {
+            CustomerCar customercar = ccjoin.get(i);
+            System.out.println((i + 1) + ". " + ccjoin.get(i).getCarMake() + " , " + ccjoin.get(i).getCarModel() + " , " + ccjoin.get(i).getCarRegnr());
+        }
+
+        System.out.print("Please enter the number of the Car you'd like to select to see the customer informations: ");
+        int selection = customerScanner.nextInt();
+        customerScanner.nextLine();
+
+        if (selection < 1 || selection > ccjoin.size()) {
+            System.out.println("Invalid Car number.");
+            return;
+        }
+
+        CustomerCar selectedCustomer = ccjoin.get(selection - 1);
+        System.out.println("Selected Car: " + selectedCustomer.getCarRegnr() +  "/n" + "The customer for name and last name is: " + selectedCustomer.getForName() +" "+ selectedCustomer.getCarModel());
+
+        if (selectedCustomer.getForName().contains("")) {
+            System.out.println("TEST");
+            //MovieMenu movieMenu = new MovieMenu();
+            //movieMenu.displayMenu(selectedMovies);
+        }
+    }
+
     /*
     public static String getEmail() {
         return email;
