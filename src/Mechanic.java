@@ -26,6 +26,10 @@ public class Mechanic {
         return Status;
     }
 
+    public void setStatus(boolean status) {
+        Status = status;
+    }
+
     public String getId() {
         return id;
     }
