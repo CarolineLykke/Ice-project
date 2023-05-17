@@ -67,6 +67,8 @@ public class Bookingsystem {
 
             Scanner scanner = new Scanner(System.in);
             System.out.println("The following mechanics are available:");
+            // here call the available mechanics
+
             String mechanicName = scanner.nextLine();
 
             // Creating a new arrayList
@@ -91,6 +93,12 @@ public class Bookingsystem {
 
 
             // Changes status on the mechanic
+
+
+
+
+
+
 
             /*
             // Getting the selected mechanic
