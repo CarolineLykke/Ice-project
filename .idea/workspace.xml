@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="creat customer og save">
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mechanic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mechanic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MechanicHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MechanicHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lolol" />
+        <entry key="$PROJECT_DIR$" value="mustafa" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -174,26 +174,26 @@
       <option name="project" value="LOCAL" />
       <updated>1683878049288</updated>
     </task>
-    <task id="LOCAL-00014" summary="customer">
-      <created>1684136400796</created>
+    <task id="LOCAL-00014" summary="loging">
+      <created>1684137324428</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1684136400796</updated>
+      <updated>1684137324428</updated>
     </task>
-    <task id="LOCAL-00015" summary="creat customer og save">
-      <created>1684146059981</created>
+    <task id="LOCAL-00015" summary="loging">
+      <created>1684138121207</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1684146059981</updated>
+      <updated>1684138121208</updated>
     </task>
-    <task id="LOCAL-00016" summary="creat customer og save">
-      <created>1684149620144</created>
+    <task id="LOCAL-00016" summary="loging">
+      <created>1684149499825</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1684149620144</updated>
+      <updated>1684149499825</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -208,8 +208,26 @@
     <MESSAGE value="array i carhandler" />
     <MESSAGE value="userhandler" />
     <MESSAGE value="loging" />
-    <MESSAGE value="customer" />
-    <MESSAGE value="creat customer og save" />
-    <option name="LAST_COMMIT_MESSAGE" value="creat customer og save" />
+    <option name="LAST_COMMIT_MESSAGE" value="loging" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MechanicHandler.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/MechanicHandler.java</url>
+          <line>120</line>
+          <properties class="MechanicHandler" method="showMechanics">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

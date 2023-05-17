@@ -12,7 +12,6 @@ public class UserMenu {
                 break;
             case "2":
                 textUI.createUserMenu();
-
                 userHandler.saveUsers();
                 break;
             default:
