@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Mechanic {
 
-    boolean Status;
+    boolean Status = true;
     String id;
     String username;
     String password;
@@ -24,6 +24,10 @@ public class Mechanic {
 
     public boolean isStatus() {
         return Status;
+    }
+
+    public void setStatus(boolean status) {
+        Status = status;
     }
 
     public String getId() {

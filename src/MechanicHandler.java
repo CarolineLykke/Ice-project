@@ -7,7 +7,6 @@ public class MechanicHandler {
     static List<Mechanic> mechanics = readMechanicStatus();
 
     private static String id;
-    private static boolean status;
 
 
     public static List<Mechanic> readMechanicStatus() {
@@ -68,18 +67,23 @@ public class MechanicHandler {
     }
 
     public void showMechanics() {
-        Scanner movieScanner = new Scanner(System.in);
         for (int i = 0; i < mechanics.size(); i++) {
             Mechanic mechanic = mechanics.get(i);
-            System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+            if (mechanic.isStatus() == true) {
+                System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+            }
         }
+        System.out.println("Mechanic not available");
+    }
 
-        System.out.print("Please enter the number of the movie you'd like to select: ");
-        int selection = movieScanner.nextInt();
-        movieScanner.nextLine();
+    public void selectMechanic(){
+        Scanner mechanicScanner = new Scanner(System.in);
+        System.out.print("Please enter the number of the mechanic you'd like to select: ");
+        int selection = mechanicScanner.nextInt();
+        mechanicScanner.nextLine();
 
         if (selection < 1 || selection > mechanics.size()) {
-            System.out.println("Invalid movie number.");
+            System.out.println("Invalid mechanic number.");
             return;
         }
 
@@ -97,13 +101,6 @@ public class MechanicHandler {
         return id;
     }
 
-    public static boolean isStatus() {
-        return status;
-    }
 
 
-    @Override
-    public String toString(){
-        return "Mechanic Id: " + getId() + "and the status is: " + isStatus();
-    }
 }
