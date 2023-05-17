@@ -8,6 +8,7 @@ public class Mechanic {
     String username;
     String password;
     int rights;
+    String assignment;
 
     public Mechanic(String id, String username, String password, int rights, boolean status) {
         this.id=id;
@@ -17,9 +18,10 @@ public class Mechanic {
         this.Status=status;
     }
 
-    public Mechanic(String id, boolean status) {
+    public Mechanic(String id, boolean status, String assignment) {
         this.id=id;
         this.Status=status;
+        this.assignment = assignment;
     }
 
     public boolean isStatus() {
@@ -44,5 +46,13 @@ public class Mechanic {
 
     public int getRights() {
         return rights;
+    }
+
+    public String getAssignment() {
+        return assignment;
+    }
+
+    public String setAssignment(String assignment) {
+        return assignment;
     }
 }
