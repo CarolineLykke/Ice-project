@@ -18,7 +18,7 @@ public class Dashboard {
                 switch (userChoice) {
                     case "1":
                         customerHandler.search();
-                    case "1":
+
                         //tasks
                         break;
 
