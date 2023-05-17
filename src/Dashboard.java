@@ -26,7 +26,7 @@ public class Dashboard {
                         break;
 
                     case "3":
-                        ;
+                        customerHandler.getCustomerCar();
                         break;
                     case "4":
                         rights = 2;

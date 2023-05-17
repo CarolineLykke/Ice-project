@@ -11,6 +11,7 @@ public class CustomerHandler {
     private static int phoneNumber;
     private static String address;
     static List<Customer> customers = readCustomerFromDatabase();
+    static List<>
 
     Scanner scan = new Scanner(System.in);
     public void createCustomer() {
@@ -132,15 +133,15 @@ public class CustomerHandler {
     }
 
     public void showAllCustomers() {
-        Scanner movieScanner = new Scanner(System.in);
+        Scanner customerScanner = new Scanner(System.in);
         for (int i = 0; i < customers.size(); i++) {
             Customer customer = customers.get(i);
             System.out.println((i + 1) + ". " + customers.get(i).getName() + " , " + customers.get(i).getLastname());
         }
 
         System.out.print("Please enter the number of the Customer you'd like to select: ");
-        int selection = movieScanner.nextInt();
-        movieScanner.nextLine();
+        int selection = customerScanner.nextInt();
+        customerScanner.nextLine();
 
         if (selection < 1 || selection > customers.size()) {
             System.out.println("Invalid Customer number.");
@@ -156,7 +157,126 @@ public class CustomerHandler {
             //movieMenu.displayMenu(selectedMovies);
         }
     }
+    public List<customerCar> getCustomerCar() {
+        List<customerCar> ccjoin = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            //STEP 1: Register JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
+            //STEP 2: Open a connection
+            System.out.println("Connecting to database loading SavedMovies");
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
+
+            //STEP 3: Execute a query
+            System.out.println("Creating statement...");
+            String sql = "select * from ccjoin inner join customer on ccjoin.customerId=customer.id inner join cars on customer.id=cars.id ";
+            stmt = conn.prepareStatement(sql);
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            //STEP 4: Extract data from result set
+            while (rs.next()) {
+                //Retrieve by column name
+
+                String customerID = rs.getString("id");
+                String customerName = rs.getString("forName");
+                String carID = rs.getString("id");
+                String carMake = rs.getString("make");
+                String carModel = rs.getString("model");
+                String carRegnr = rs.getString("regnr");
+                String carKm = rs.getString("km");
+
+
+
+                    System.out.println(customerName + " "+carMake + " "+ carModel + " "+ carRegnr + " "+ carKm);
+                for (int i = 0; i < mechanics.size(); i++) {
+                    Mechanic mechanic = mechanics.get(i);
+                    System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+                }
+            }
+            //STEP 5: Clean-up environment
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException se) {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            //finally block used to close resources
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }// nothing we can do
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }//end finally try
+
+        }
+    }
+    public static void getCarFromCustomer() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            //STEP 1: Register JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            //STEP 2: Open a connection
+            System.out.println("Connecting to database loading SavedMovies");
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
+
+            //STEP 3: Execute a query
+            System.out.println("Creating statement...");
+            String sql = "select * from cars join customer on cars.id=customer.carsid";
+            stmt = conn.prepareStatement(sql);
+
+            ResultSet rs = stmt.executeQuery(sql);
+
+            //STEP 4: Extract data from result set
+            while (rs.next()) {
+                //Retrieve by column name
+
+                String customerID = rs.getString("id");
+                String carID = rs.getString("make");
+
+                if (Userhandler.getId().equals(customerID)) {
+                    System.out.println(carID);
+                }
+            }
+            //STEP 5: Clean-up environment
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException se) {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            //finally block used to close resources
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }// nothing we can do
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }//end finally try
+
+        }
+    }
     /*
     public static String getEmail() {
         return email;
