@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="alt merget">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Foreman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Foreman.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ice-project/MechanicHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/MechanicHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Userhandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Userhandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Foreman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Foreman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Userhandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Userhandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/dbconection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/dbconection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Communications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Communications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbconection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbconection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mustafa" />
+        <entry key="$PROJECT_DIR$" value="mix" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -209,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684307047004</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="alt merget">
+      <created>1684309672714</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684309672714</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,24 +227,16 @@
     <MESSAGE value="array i carhandler" />
     <MESSAGE value="userhandler" />
     <MESSAGE value="loging" />
-    <option name="LAST_COMMIT_MESSAGE" value="loging" />
+    <MESSAGE value="alt merget" />
+    <option name="LAST_COMMIT_MESSAGE" value="alt merget" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MechanicHandler.java</url>
-          <line>83</line>
+          <line>87</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/MechanicHandler.java</url>
-          <line>120</line>
-          <properties class="MechanicHandler">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
