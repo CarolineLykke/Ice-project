@@ -17,8 +17,8 @@ public class Dashboard {
                         break;
 
                     case "2":
-                        mechanicHandler.loadMechanicStatus();
-                        mechanicHandler.displayMechanicStatus();
+                        mechanicHandler.readMechanicStatus();
+                        mechanicHandler.showMechanics();
                         break;
 
                     case "3":

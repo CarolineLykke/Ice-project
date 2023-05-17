@@ -22,9 +22,23 @@ public class Mechanic {
         this.Status=status;
     }
 
+    public boolean isStatus() {
+        return Status;
+    }
 
+    public String getId() {
+        return id;
+    }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
-
+    public int getRights() {
+        return rights;
+    }
 }
