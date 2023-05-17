@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="getCustomerCar">
-      <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684311105090</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="getCustomerCar">
+      <created>1684323897570</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684323897570</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +225,7 @@
     <MESSAGE value="array i carhandler" />
     <MESSAGE value="userhandler" />
     <MESSAGE value="loging" />
-    <option name="LAST_COMMIT_MESSAGE" value="loging" />
+    <MESSAGE value="getCustomerCar" />
+    <option name="LAST_COMMIT_MESSAGE" value="getCustomerCar" />
   </component>
 </project>
