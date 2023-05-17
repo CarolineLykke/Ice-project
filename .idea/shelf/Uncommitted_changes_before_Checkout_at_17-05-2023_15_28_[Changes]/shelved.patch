@@ -1,0 +1,42 @@
+Index: src/dbconection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.sql.Connection;\r\nimport java.sql.DriverManager;\r\nimport java.sql.PreparedStatement;\r\n\r\npublic class dbconection {\r\n\r\n    static final String DB_URL = \"jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7617247\";\r\n\r\n    //  Database credentials\r\n    static final String USER = \"sql7617247\";\r\n    static final String PASS = \"nQyBL7eZqc\";\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dbconection.java b/src/dbconection.java
+--- a/src/dbconection.java	(revision fa336b379e71b7bc701703aadf4765f1a8f1b03a)
++++ b/src/dbconection.java	(date 1684330036719)
+@@ -4,9 +4,9 @@
+ 
+ public class dbconection {
+ 
+-    static final String DB_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7617247";
++    static final String DB_URL = "jdbc:mysql://cp03.nordicway.dk:3306/edk_ice";
+ 
+     //  Database credentials
+-    static final String USER = "sql7617247";
+-    static final String PASS = "nQyBL7eZqc";
++    static final String USER = "edk_mustafa";
++    static final String PASS = "CkNhx-6t(S_V";
+ }
+Index: src/Dashboard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Dashboard {\r\n    static int rights = 0;\r\n        //// Login Part\r\n        static Userhandler userHandler = new Userhandler();\r\n    static User user = new User();\r\n        static TextUI textUI = new TextUI(userHandler);\r\n        static MechanicHandler mechanicHandler = new MechanicHandler();\r\n        static CustomerHandler customerHandler = new CustomerHandler();\r\n        static CarHandler carHandler = new CarHandler();\r\n\r\n\r\n        public static void setupDashboardAdmin(){\r\n\r\n\r\n            ////Dashboard\r\n            String userChoice = textUI.startMenuAdmin();\r\n            while (true) {\r\n                switch (userChoice) {\r\n                    case \"1\":\r\n                        customerHandler.search();\r\n                    case \"1\":\r\n                        //tasks\r\n                        break;\r\n\r\n                    case \"2\":\r\n                        mechanicHandler.readMechanicStatus();\r\n                        mechanicHandler.showMechanics();\r\n                        break;\r\n\r\n                    case \"3\":\r\n                        customerHandler.createCustomer();\r\n                        customerHandler.saveUsers();\r\n                        break;\r\n                    case \"4\":\r\n                        customerHandler.getCustomerCar();\r\n                        customerHandler.showAllCustomerCar();\r\n                    case \"5\":\r\n                        customerHandler.getCustomerCar();\r\n                        customerHandler.showAllCarCustomer();\r\n                    case \"6\":\r\n                        rights = 2;\r\n                        textUI.createUserMenu();\r\n                        userHandler.saveUsers(rights);\r\n                        break;\r\n                    case \"7\":\r\n                        customerHandler.readCustomerFromDatabase();\r\n                        customerHandler.showAllCustomers();\r\n                        break;\r\n\r\n                    case \"8\":\r\n                        carHandler.readCarFromDatabase();\r\n                        carHandler.showAllCars();\r\n                        ;\r\n                        break;\r\n                }\r\n                textUI.backToMenu();\r\n            }\r\n        }\r\n\r\n    public static void setupDashboardMechanic() {\r\n        ////Dashboard\r\n        String userChoice = textUI.startMenuMechanic();\r\n        while (true) {\r\n            switch (userChoice) {\r\n                case \"1\":\r\n                    ;\r\n                    break;\r\n\r\n                case \"2\":\r\n                    ;\r\n                    break;\r\n\r\n                case \"3\":\r\n                    ;\r\n                    break;\r\n                case \"4\":\r\n                    ;\r\n                    break;\r\n                case \"5\":\r\n                    ;\r\n                    break;\r\n            }\r\n            textUI.backToMenu();\r\n        }\r\n    }\r\n\r\n    public static void setupDashboardCustomer() {\r\n        ////Dashboard\r\n        String userChoice = textUI.startMenuCustomer();\r\n        while (true) {\r\n            switch (userChoice) {\r\n                case \"1\":\r\n                    ;\r\n                    break;\r\n\r\n                case \"2\":\r\n                    ;\r\n                    break;\r\n\r\n                case \"3\":\r\n                    ;\r\n                    break;\r\n                case \"4\":\r\n                    ;\r\n                    break;\r\n                case \"5\":\r\n                    ;\r\n                    break;\r\n            }\r\n            textUI.backToMenu();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Dashboard.java b/src/Dashboard.java
+--- a/src/Dashboard.java	(revision fa336b379e71b7bc701703aadf4765f1a8f1b03a)
++++ b/src/Dashboard.java	(date 1684330068780)
+@@ -18,7 +18,7 @@
+                 switch (userChoice) {
+                     case "1":
+                         customerHandler.search();
+-                    case "1":
++
+                         //tasks
+                         break;
+ 
