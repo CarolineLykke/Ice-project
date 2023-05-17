@@ -5,6 +5,8 @@ public class Dashboard {
     static User user = new User();
         static TextUI textUI = new TextUI(userHandler);
         static MechanicHandler mechanicHandler = new MechanicHandler();
+        static CustomerHandler customerHandler = new CustomerHandler();
+        static CarHandler carHandler = new CarHandler();
 
 
         public static void setupDashboardAdmin(){
@@ -35,6 +37,14 @@ public class Dashboard {
 
                         break;
                     case "5":
+                        customerHandler.readCustomerFromDatabase();
+                        customerHandler.showAllCustomers();
+                        ;
+                        break;
+
+                    case "6":
+                        carHandler.readCarFromDatabase();
+                        carHandler.showAllCars();
                         ;
                         break;
                 }

@@ -45,16 +45,9 @@ public class TextUI {
         System.out.println("Please enter a password: ");
         String password = scanner.nextLine();
         String id = Userhandler.getId();
-        int rights = 1;
+        int rights = Userhandler.getRights();
         if (userhandler.createUser(username, password, id, rights)) {
             System.out.println("Welcome " + username);
-            if (Userhandler.getRights()==1){
-                System.out.println("Du har oprettet en admin");
-            } else if (Userhandler.getRights() == 2) {
-                System.out.println("Du har oprettet en mekaniker");
-            } else if (Userhandler.getRights() == 3) {
-                System.out.println("Du har oprettet en kunde");
-            }
         } else {
             System.out.println("Sorry, the username or password can not be used try agin:");
             createUserMenu();
@@ -62,7 +55,7 @@ public class TextUI {
     }
 
     public String startMenuAdmin() {
-        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers");
+        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Mechanic status" + "\n" + "3: Add Customer" + "\n" + "4: Add Mechanic" + "\n" + "5: Show all Customers"+"\n"+"6: show all cars");
         return scanner.nextLine();
     }
     public String startMenuMechanic() {
