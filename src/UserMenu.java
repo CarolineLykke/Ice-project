@@ -1,5 +1,5 @@
 public class UserMenu {
-
+    static int rights = 0;
     Userhandler userHandler = new Userhandler();
     TextUI textUI = new TextUI(userHandler);
     public void setupUserMenu() {
@@ -11,8 +11,9 @@ public class UserMenu {
                 textUI.loginMenu();
                 break;
             case "2":
+                rights = 1;
                 textUI.createUserMenu();
-                userHandler.saveUsers();
+                userHandler.saveUsers(rights);
                 break;
             default:
                 System.out.println("Goodbye");

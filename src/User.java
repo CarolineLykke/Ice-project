@@ -4,8 +4,12 @@ public class User {
     private String password;
     private int rights;
 
-    public User(String username, String password, String id, int rights) {
-        this.Id = id;
+    public User() {
+
+    }
+
+
+    public User(String username, String password, int rights) {
         this.username = username;
         this.password = password;
         this.rights = rights;
