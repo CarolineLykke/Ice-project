@@ -33,8 +33,9 @@ public class MechanicHandler {
                 //Retrieve by column name
                 String id = rs.getString("id");
                 boolean status = rs.getBoolean("status");
-                //Create movie object and add to list
-                Mechanic mechanic = new Mechanic(id,status);
+                String assignment = rs.getString("assignment");
+                //Create mechanic object and add to list
+                Mechanic mechanic = new Mechanic(id,status,assignment);
                 mechanics.add(mechanic);
             }
 
@@ -76,6 +77,24 @@ public class MechanicHandler {
         System.out.println("Mechanic not available");
     }
 
+    // a function over Mechanics that aren't available and what assignment they are working on
+    public ArrayList<String> getWorkingMechanics() {
+        ArrayList<String> workingMechanics = new ArrayList<>();
+        for (int i = 0; i < mechanics.size(); i++) {
+            Mechanic mechanic = mechanics.get(i); // initialize mechanic
+            if (mechanic.isStatus() == false) {
+                //names all the unavailable mechanics with id and their assignments
+                String mechanicInfo = (i + 1) + ". " + mechanics.get(i).getId() + mechanic.getUsername()+ ": " + mechanic.getAssignment();
+                 // HERE call assignment function or set assignment??
+                workingMechanics.add(mechanicInfo); // and adding it to the workingMechanics array
+            } else {
+                System.out.println("All mechanics are available");
+            }
+
+        }
+        return workingMechanics;
+    }
+
     public void selectMechanic(){
         Scanner mechanicScanner = new Scanner(System.in);
         System.out.print("Please enter the number of the mechanic you'd like to select: ");
@@ -87,10 +106,10 @@ public class MechanicHandler {
             return;
         }
 
-        Mechanic selectedMovies = mechanics.get(selection - 1);
-        System.out.println("Selected Mechanic: " + selectedMovies.getId());
+        Mechanic selectedMechanic = mechanics.get(selection - 1);
+        System.out.println("Selected Mechanic: " + selectedMechanic.getId());
 
-        if (selectedMovies.getId().contains("")) {
+        if (selectedMechanic.getId().contains("")) {
             System.out.println("TEST");
         }
     }
