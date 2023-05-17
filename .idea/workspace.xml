@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Mechanic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/MechanicHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/MechanicHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Userhandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Userhandler.class" afterDir="false" />
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="getCustomerCar">
+      <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -17,6 +17,8 @@ public class Dashboard {
             while (true) {
                 switch (userChoice) {
                     case "1":
+                        customerHandler.search();
+                    case "1":
                         //tasks
                         break;
 
@@ -43,7 +45,6 @@ public class Dashboard {
                     case "7":
                         customerHandler.readCustomerFromDatabase();
                         customerHandler.showAllCustomers();
-                        ;
                         break;
 
                     case "8":

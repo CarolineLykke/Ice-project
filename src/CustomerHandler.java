@@ -275,43 +275,50 @@ public class CustomerHandler {
         }
     }
 
-    /*
-    public static String getEmail() {
-        return email;
-    }
+    public void search() {
+        Scanner scanner = new Scanner(System.in);
 
-    public static String getName() {
-        return name;
-    }
+        System.out.print("Enter a customer name to search: ");
+        String search = scanner.nextLine();
 
-    public static String getLastName() {
-        return lastName;
-    }
+        List<CustomerCar> matching = searchCustomerByName(search);
 
-    public static int getPhoneNumber() {
-        return phoneNumber;
-    }
+        if (matching.size() == 0) {
+            System.out.println("No matching found.");
+            return;
+        }
 
-    public static String getAddress() {
-        return address;
-    }
+        System.out.println("Matching customer:");
+        for (int i = 0; i < ccjoin.size(); i++) {
+            System.out.println((i + 1) + ". " + ccjoin.get(i).getForName());
+        }
 
-    public void displayCustomers(){
-        for (Customer customer : customers){
-            email = getEmail();
-            name = getName();
-            lastName = getLastName();
-            phoneNumber = getPhoneNumber();
-            address = getAddress();
-            System.out.println(this);
+        System.out.print("Enter the number of the movie to select: ");
+        int movieIndex = scanner.nextInt();
+        scanner.nextLine(); // consume the newline character
 
+        if (movieIndex < 1 || movieIndex > ccjoin.size()) {
+            System.out.println("Invalid movie number.");
+            return;
+        }
+
+        CustomerCar selected = ccjoin.get(movieIndex - 1);
+        System.out.println("Selected movie: " + selected.getForName());
+
+        // Call your function on selectedMovie here
+        if (selected.getForName().contains("")) {
+            System.out.println("Test");
         }
     }
 
-    @Override
-    public String toString(){
-        return "email: " +  getEmail() + " name: " + getName();
-    }*/
-
-    //
+    public List<CustomerCar> searchCustomerByName(String sName) {
+        List<CustomerCar> matchingMovies = new ArrayList<>();
+        for (CustomerCar customerCar : this.ccjoin) {
+            String name = customerCar.getForName();
+            if (name.toLowerCase().contains(sName.toLowerCase())) {
+                matchingMovies.add(customerCar);
+            }
+        }
+        return matchingMovies;
+    }
 }
