@@ -263,21 +263,6 @@ public class CustomerHandler {
         if (selectedCustomer.getForName().contains("")) {
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Choose between the following options:");
-            System.out.println("1. Add a new car");
-            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getForName() + " " + selectedCustomer.getLastName());
-
-            String choice = scanner.nextLine();
-            if (choice.equals("1")) {
-                carHandler.createCar();
-                carHandler.savecars();
-                System.out.println(("you have now added a car to the customer"));
-            } else if (choice.equals("2")) {
-                // System.out.println(getCustomerCar());
-
-            } else {
-                System.out.println("Invalid choice. Please choose 1 or 2.");
-            }
         }
     }
 
