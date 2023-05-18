@@ -132,7 +132,7 @@ public class CarHandler {
             System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel()+ " , " + cars.get(i).getRegnr()+ " , " + cars.get(i).getKm());
         }
 
-        System.out.print("Please enter the number of the Customer you'd like to select: ");
+        System.out.print("Please enter the number of the car you'd like to select: ");
         int selection = carScanner.nextInt();
         carScanner.nextLine();
 
@@ -141,10 +141,10 @@ public class CarHandler {
             return;
         }
 
-        Car selectedMovies = cars.get(selection - 1);
-        System.out.println("Selected Customer: " + selectedMovies.getMake());
+        Car selectedCar = cars.get(selection - 1);
+        System.out.println("Selected Car: " + selectedCar.getMake());
 
-        if (selectedMovies.getMake().contains("")) {
+        if (selectedCar.getMake().contains("")) {
             System.out.println("TEST");
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);

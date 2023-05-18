@@ -148,10 +148,10 @@ public class CustomerHandler {
             return;
         }
 
-        Customer selectedMovies = customers.get(selection - 1);
-        System.out.println("Selected Customer: " + selectedMovies.getName());
+        Customer selectedCustomer = customers.get(selection - 1);
+        System.out.println("Selected Customer: " + selectedCustomer.getName());
 
-        if (selectedMovies.getName().contains("")) {
+        if (selectedCustomer.getName().contains("")) {
             System.out.println("");
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
@@ -267,7 +267,7 @@ public class CustomerHandler {
         }
 
         CustomerCar selectedCustomer = ccjoin.get(selection - 1);
-        System.out.println("Selected Car: " + selectedCustomer.getCarRegnr() +  "/n" + "The customer for name and last name is: " + selectedCustomer.getForName() +" "+ selectedCustomer.getCarModel());
+        System.out.println("Selected Car: " + selectedCustomer.getCarRegnr() +  "\n" + "The customer for name and last name is: " + selectedCustomer.getForName() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getForName().contains("")) {
             System.out.println("TEST");
@@ -275,7 +275,7 @@ public class CustomerHandler {
             //movieMenu.displayMenu(selectedMovies);
         }
     }
-
+//se hvilken bil kunden har
     public void search() {
         Scanner scanner = new Scanner(System.in);
 
