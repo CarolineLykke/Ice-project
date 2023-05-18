@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class Dashboard {
     static int rights = 0;
     //// Login Part
@@ -90,21 +92,13 @@ public class Dashboard {
         while (true) {
             switch (userChoice) {
                 case "1":
-                    ;
+                    System.out.println("See the status on your car:");
+                    System.out.println("The status of your car is: " );
                     break;
-
                 case "2":
-                    ;
-                    break;
+                    System.out.println("See your Car informations");
+                    System.out.println("Here is your car informations");
 
-                case "3":
-                    ;
-                    break;
-                case "4":
-                    ;
-                    break;
-                case "5":
-                    ;
                     break;
             }
             textUI.backToMenu();
