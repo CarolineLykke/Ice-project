@@ -146,8 +146,12 @@ public class CarHandler {
         //+  "\n" + "The customer for name and last name is: " + selectedCar.getForName() +" "+ selectedCustomer.getLastName());
 
         if (selectedCar.getRegnr().contains("")) {
-            System.out.println("TEST");
+            System.out.println("Choose between the following options:");
+            System.out.println("1. Add car to customer");
+            System.out.println("2. Reapir something on the car");
+            System.out.println("3. The car is ready?");
             //MovieMenu movieMenu = new MovieMenu();
+
             //movieMenu.displayMenu(selectedMovies);
         }
     }
