@@ -69,7 +69,7 @@ public class TextUI {
     }
 
     public void backToMenu() {
-        System.out.println("Press 1 to go back to the start menu, or 2 to close the application.");
+        System.out.println("Press 1 to go back to the start menu, or 2 to LogOut or 3 to close the application.");
         String choice = scanner.nextLine();
         switch (choice) {
             case "1":
@@ -82,6 +82,11 @@ public class TextUI {
                 }
                 break;
             case "2":
+                System.out.println("Logging out...");
+                UserMenu userMenu = new UserMenu();
+                userMenu.setupUserMenu();
+                break;
+            case "3":
                 System.out.println("Closing the application...");
                 System.exit(0);
                 break;
