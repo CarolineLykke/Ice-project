@@ -1,61 +1,61 @@
 public class Dashboard {
     static int rights = 0;
-        //// Login Part
-        static Userhandler userHandler = new Userhandler();
+    //// Login Part
+    static Userhandler userHandler = new Userhandler();
     static User user = new User();
-        static TextUI textUI = new TextUI(userHandler);
-        static MechanicHandler mechanicHandler = new MechanicHandler();
-        static CustomerHandler customerHandler = new CustomerHandler();
-        static CarHandler carHandler = new CarHandler();
+    static TextUI textUI = new TextUI(userHandler);
+    static MechanicHandler mechanicHandler = new MechanicHandler();
+    static CustomerHandler customerHandler = new CustomerHandler();
+    static CarHandler carHandler = new CarHandler();
 
 
-        public static void setupDashboardAdmin(){
+    public static void setupDashboardAdmin(){
 
 
-            ////Dashboard
-            String userChoice = textUI.startMenuAdmin();
-            while (true) {
-                switch (userChoice) {
-                    case "1":
-                        customerHandler.search();
+        ////Dashboard
+        String userChoice = textUI.startMenuAdmin();
+        while (true) {
+            switch (userChoice) {
+                case "1":
+                    customerHandler.search();
+                case "2":
+                    //tasks
+                    break;
 
-                        //tasks
-                        break;
+                case "3":
+                    mechanicHandler.readMechanicStatus();
+                    mechanicHandler.showMechanics();
+                    break;
 
-                    case "2":
-                        mechanicHandler.readMechanicStatus();
-                        mechanicHandler.showMechanics();
-                        break;
+                case "4":
+                    customerHandler.createCustomer();
+                    customerHandler.saveUsers();
+                    break;
+                case "5":
+                    customerHandler.getCustomerCar();
+                    customerHandler.showAllCustomerCar();
+                case "6":
+                    customerHandler.getCustomerCar();
+                    customerHandler.showAllCarCustomer();
+                case "7":
+                    rights = 2;
+                    textUI.createUserMenu();
+                    userHandler.saveUsers(rights);
+                    break;
+                case "8":
+                    customerHandler.readCustomerFromDatabase();
+                    customerHandler.showAllCustomers();
+                    break;
 
-                    case "3":
-                        customerHandler.createCustomer();
-                        customerHandler.saveUsers();
-                        break;
-                    case "4":
-                        customerHandler.getCustomerCar();
-                        customerHandler.showAllCustomerCar();
-                    case "5":
-                        customerHandler.getCustomerCar();
-                        customerHandler.showAllCarCustomer();
-                    case "6":
-                        rights = 2;
-                        textUI.createUserMenu();
-                        userHandler.saveUsers(rights);
-                        break;
-                    case "7":
-                        customerHandler.readCustomerFromDatabase();
-                        customerHandler.showAllCustomers();
-                        break;
-
-                    case "8":
-                        carHandler.readCarFromDatabase();
-                        carHandler.showAllCars();
-                        ;
-                        break;
-                }
-                textUI.backToMenu();
+                case "9":
+                    carHandler.readCarFromDatabase();
+                    carHandler.showAllCars();
+                    ;
+                    break;
             }
+            textUI.backToMenu();
         }
+    }
 
     public static void setupDashboardMechanic() {
         ////Dashboard
