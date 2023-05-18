@@ -11,7 +11,7 @@ public class CustomerHandler {
     private static int phoneNumber;
     private static String address;
     static List<Customer> customers = readCustomerFromDatabase();
-    //static List<CustomerCar> ccjoin = getCustomerCar();
+    static List<CustomerCar> ccjoin = getCustomerCar();
 
     Scanner scan = new Scanner(System.in);
     CarHandler carHandler = new CarHandler();
@@ -166,7 +166,8 @@ public class CustomerHandler {
                 carHandler.createCar();
                 carHandler.savecars();
             } else if (choice.equals("2")) {
-                System.out.println("yes");
+               // System.out.println(getCustomerCar());
+
             } else {
                 System.out.println("Invalid choice. Please choose 1 or 2.");
             }
@@ -176,7 +177,7 @@ public class CustomerHandler {
             //movieMenu.displayMenu(selectedMovies);
         }
 
-    /*public static List<CustomerCar> getCustomerCar() {
+    public static List<CustomerCar> getCustomerCar() {
         List<CustomerCar> ccjoin = new ArrayList<>();
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -240,16 +241,16 @@ public class CustomerHandler {
 
         }
         return ccjoin;
-    }*/
+    }
 
-    /*public void showAllCustomerCar() {
+    public void showAllCustomerCar() {
         Scanner customerScanner = new Scanner(System.in);
         for (int i = 0; i < ccjoin.size(); i++) {
             CustomerCar customercar = ccjoin.get(i);
             System.out.println((i + 1) + ". " + ccjoin.get(i).getForName() + " , " + ccjoin.get(i).getCarMake());
         }
 
-        System.out.print("Please enter the number of the Customer you'd like to select to see the car informations: ");
+        System.out.print("Please enter the number of the Customer you'd like to select to see the car information: ");
         int selection = customerScanner.nextInt();
         customerScanner.nextLine();
 
@@ -267,7 +268,7 @@ public class CustomerHandler {
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
-    }*/
+    }
 
     /*public void showAllCarCustomer() {
         Scanner customerScanner = new Scanner(System.in);
