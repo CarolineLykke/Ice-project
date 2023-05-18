@@ -282,7 +282,7 @@ public class CustomerHandler {
         System.out.print("Enter a customer name to search: ");
         String search = scanner.nextLine();
 
-        List<CustomerCar> matching = searchCustomerByName(search);
+        List<Customer> matching = searchCustomerByName(search);
 
         if (matching.size() == 0) {
             System.out.println("No matching found.");
@@ -290,34 +290,34 @@ public class CustomerHandler {
         }
 
         System.out.println("Matching customer:");
-        for (int i = 0; i < ccjoin.size(); i++) {
-            System.out.println((i + 1) + ". " + ccjoin.get(i).getForName());
+        for (int i = 0; i < customers.size(); i++) {
+            System.out.println((i + 1) + ". " + customers.get(i).getName());
         }
 
         System.out.print("Enter the number of the movie to select: ");
         int movieIndex = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
 
-        if (movieIndex < 1 || movieIndex > ccjoin.size()) {
+        if (movieIndex < 1 || movieIndex > customers.size()) {
             System.out.println("Invalid movie number.");
             return;
         }
 
-        CustomerCar selected = ccjoin.get(movieIndex - 1);
-        System.out.println("Selected movie: " + selected.getForName());
+        Customer selected = customers.get(movieIndex - 1);
+        System.out.println("Selected movie: " + selected.getName());
 
         // Call your function on selectedMovie here
-        if (selected.getForName().contains("")) {
+        if (selected.getName().contains("")) {
             System.out.println("Test");
         }
     }
 
-    public List<CustomerCar> searchCustomerByName(String sName) {
-        List<CustomerCar> matchingNames = new ArrayList<>();
-        for (CustomerCar customerCar : this.ccjoin) {
-            String name = customerCar.getForName();
+    public List<Customer> searchCustomerByName(String sName) {
+        List<Customer> matchingNames = new ArrayList<>();
+        for (Customer customer : this.customers) {
+            String name = customer.getName();
             if (name.toLowerCase().contains(sName.toLowerCase())) {
-                matchingNames.add(customerCar);
+                matchingNames.add(customer);
             }
         }
         return matchingNames;
