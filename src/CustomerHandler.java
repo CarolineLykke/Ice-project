@@ -152,7 +152,8 @@ public class CustomerHandler {
         System.out.println("Selected Customer: " + selectedCustomer.getName());
 
         if (selectedCustomer.getName().contains("")) {
-            System.out.println("");
+            System.out.println("Here is " + selectedCustomer.getName() + " personal informations");
+            System.out.println("Email: " + selectedCustomer.getEmail() + " , Phone number: " + selectedCustomer.getPhoneNumber() + ", Adreess: " + selectedCustomer.getAddress());
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
@@ -294,7 +295,7 @@ public class CustomerHandler {
             System.out.println((i + 1) + ". " + customers.get(i).getName());
         }
 
-        System.out.print("Enter the number of the movie to select: ");
+        System.out.print("Enter the number of the Customer to select: ");
         int movieIndex = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
 
@@ -304,7 +305,7 @@ public class CustomerHandler {
         }
 
         Customer selected = customers.get(movieIndex - 1);
-        System.out.println("Selected movie: " + selected.getName());
+        System.out.println("Selected Customer: " + selected.getName());
 
         // Call your function on selectedMovie here
         if (selected.getName().contains("")) {

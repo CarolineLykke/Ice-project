@@ -22,12 +22,10 @@ public class Dashboard {
                     case "2":
                         //tasks
                         break;
-
                     case "3":
                         mechanicHandler.readMechanicStatus();
                         mechanicHandler.showMechanics();
                         break;
-
                     case "4":
                         customerHandler.createCustomer();
                         customerHandler.saveUsers();
@@ -35,9 +33,11 @@ public class Dashboard {
                     case "5":
                         customerHandler.getCustomerCar();
                         customerHandler.showAllCustomerCar();
+                        break;
                     case "6":
                         customerHandler.getCustomerCar();
                         customerHandler.showAllCarCustomer();
+                        break;
                     case "7":
                         rights = 2;
                         textUI.createUserMenu();
@@ -47,11 +47,9 @@ public class Dashboard {
                         customerHandler.readCustomerFromDatabase();
                         customerHandler.showAllCustomers();
                         break;
-
                     case "9":
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
-                        ;
                         break;
                 }
                 textUI.backToMenu();
