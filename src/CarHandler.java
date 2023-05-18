@@ -142,9 +142,10 @@ public class CarHandler {
         }
 
         Car selectedCar = cars.get(selection - 1);
-        System.out.println("Selected Car: " + selectedCar.getMake());
+        System.out.println("Selected Car: " + selectedCar.getRegnr());
+        //+  "\n" + "The customer for name and last name is: " + selectedCar.getForName() +" "+ selectedCustomer.getLastName());
 
-        if (selectedCar.getMake().contains("")) {
+        if (selectedCar.getRegnr().contains("")) {
             System.out.println("TEST");
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);

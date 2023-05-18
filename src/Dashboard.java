@@ -33,22 +33,16 @@ public class Dashboard {
                         customerHandler.saveUsers();
                         break;
                     case "5":
-                        customerHandler.getCustomerCar();
-                        customerHandler.showAllCustomerCar();
-                    case "6":
-                        customerHandler.getCustomerCar();
-                        customerHandler.showAllCarCustomer();
-                    case "7":
                         rights = 2;
                         textUI.createUserMenu();
                         userHandler.saveUsers(rights);
                         break;
-                    case "8":
+                    case "6":
                         customerHandler.readCustomerFromDatabase();
                         customerHandler.showAllCustomers();
                         break;
 
-                    case "9":
+                    case "7":
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
                         ;

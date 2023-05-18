@@ -11,7 +11,7 @@ public class CustomerHandler {
     private static int phoneNumber;
     private static String address;
     static List<Customer> customers = readCustomerFromDatabase();
-    static List<CustomerCar> ccjoin = getCustomerCar();
+    //static List<CustomerCar> ccjoin = getCustomerCar();
 
     Scanner scan = new Scanner(System.in);
     public void createCustomer() {
@@ -150,14 +150,15 @@ public class CustomerHandler {
 
         Customer selectedCustomer = customers.get(selection - 1);
         System.out.println("Selected Customer: " + selectedCustomer.getName());
+        //System.out.println("The car make and model is: " + selectedCar.getCarMake() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getName().contains("")) {
-            System.out.println("");
+            //System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
     }
-    public static List<CustomerCar> getCustomerCar() {
+    /*public static List<CustomerCar> getCustomerCar() {
         List<CustomerCar> ccjoin = new ArrayList<>();
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -221,9 +222,9 @@ public class CustomerHandler {
 
         }
         return ccjoin;
-    }
+    }*/
 
-    public void showAllCustomerCar() {
+    /*public void showAllCustomerCar() {
         Scanner customerScanner = new Scanner(System.in);
         for (int i = 0; i < ccjoin.size(); i++) {
             CustomerCar customercar = ccjoin.get(i);
@@ -248,9 +249,9 @@ public class CustomerHandler {
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
-    }
+    }*/
 
-    public void showAllCarCustomer() {
+    /*public void showAllCarCustomer() {
         Scanner customerScanner = new Scanner(System.in);
         for (int i = 0; i < ccjoin.size(); i++) {
             CustomerCar customercar = ccjoin.get(i);
@@ -267,14 +268,14 @@ public class CustomerHandler {
         }
 
         CustomerCar selectedCustomer = ccjoin.get(selection - 1);
-        System.out.println("Selected Car: " + selectedCustomer.getCarRegnr() +  "\n" + "The customer for name and last name is: " + selectedCustomer.getForName() +" "+ selectedCustomer.getCarModel());
+        System.out.println("Selected Car: " + selectedCustomer.getCarRegnr() +  "\n" + "The customer for name and last name is: " + selectedCustomer.getForName() +" "+ selectedCustomer.getLastName());
 
         if (selectedCustomer.getForName().contains("")) {
             System.out.println("TEST");
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
-    }
+    }*/
 //se hvilken bil kunden har
     public void search() {
         Scanner scanner = new Scanner(System.in);
@@ -294,17 +295,17 @@ public class CustomerHandler {
             System.out.println((i + 1) + ". " + customers.get(i).getName());
         }
 
-        System.out.print("Enter the number of the movie to select: ");
+        System.out.print("Enter the number of the customer you want to select: ");
         int movieIndex = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
 
         if (movieIndex < 1 || movieIndex > customers.size()) {
-            System.out.println("Invalid movie number.");
+            System.out.println("Invalid customer number.");
             return;
         }
 
         Customer selected = customers.get(movieIndex - 1);
-        System.out.println("Selected movie: " + selected.getName());
+        System.out.println("Selected customer: " + selected.getName());
 
         // Call your function on selectedMovie here
         if (selected.getName().contains("")) {

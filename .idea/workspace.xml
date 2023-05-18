@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CustomerCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
