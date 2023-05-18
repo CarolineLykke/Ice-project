@@ -29,15 +29,15 @@ public class CustomerHandler {
         int phoneNumber = Integer.parseInt(scan.nextLine());
         System.out.println("Please enter a address: ");
         String address = scan.nextLine();
-        customers.add(new Customer(email,name,lastName,phoneNumber,address,id));
+        customers.add(new Customer(email, name, lastName, phoneNumber, address, id));
     }
+
     public void saveUsers() {
         //UserHandler userHandler = new UserHandler();
 
         Connection conn = null;
         PreparedStatement stmt = null;
-        try
-        {
+        try {
             //STEP 1: Register JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
             //STEP 2: Open a connection
@@ -51,12 +51,12 @@ public class CustomerHandler {
 
             // create the mysql insert preparedstatement
             stmt = conn.prepareStatement(sql);
-            for(Customer customer:customers){
-                stmt.setString ( 1,customer.getEmail());
-                stmt.setString ( 2,customer.getName());
-                stmt.setString ( 3,customer.getLastname());
-                stmt.setInt ( 4,customer.getPhoneNumber());
-                stmt.setString ( 5,customer.getAddress());
+            for (Customer customer : customers) {
+                stmt.setString(1, customer.getEmail());
+                stmt.setString(2, customer.getName());
+                stmt.setString(3, customer.getLastname());
+                stmt.setInt(4, customer.getPhoneNumber());
+                stmt.setString(5, customer.getAddress());
             }
 
 
@@ -66,9 +66,7 @@ public class CustomerHandler {
 
             conn.close();
             //DashBoard.setupDashboard();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
         }
@@ -103,7 +101,7 @@ public class CustomerHandler {
                 String address = rs.getString("address");
                 int id = rs.getInt("id");
                 //Customer customers = new Customer(email, name, lastName, phoneNumber, address);
-                Customer customer = new Customer(email,name,lastName,phoneNumber,address,id);
+                Customer customer = new Customer(email, name, lastName, phoneNumber, address, id);
                 customers.add(customer);
                 //customers.add(new Customer(email,name,lastName,phoneNumber,address));
             }
@@ -153,31 +151,28 @@ public class CustomerHandler {
         }
 
         Customer selectedCustomer = customers.get(selection - 1);
-        System.out.println("Selected Customer: " + selectedCustomer.getName()+ selectedCustomer.getid());
+        System.out.println("Selected Customer: " + selectedCustomer.getName() + selectedCustomer.getid());
         //System.out.println("The car make and model is: " + selectedCar.getCarMake() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getName().contains("")) {
-           Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
             System.out.println("Choose between the following options:");
             System.out.println("1. Add a new car");
-            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getName() +" "+ selectedCustomer.getLastname());
+            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getName() + " " + selectedCustomer.getLastname());
 
             String choice = scanner.nextLine();
             if (choice.equals("1")) {
                 carHandler.createCar();
                 carHandler.savecars();
             } else if (choice.equals("2")) {
-               // System.out.println(getCustomerCar());
+                // System.out.println(getCustomerCar());
 
             } else {
                 System.out.println("Invalid choice. Please choose 1 or 2.");
             }
         }
-            //System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
-            //MovieMenu movieMenu = new MovieMenu();
-            //movieMenu.displayMenu(selectedMovies);
-        }
+    }
 
     public static List<CustomerCar> getCustomerCar() {
         List<CustomerCar> ccjoin = new ArrayList<>();
@@ -212,11 +207,11 @@ public class CustomerHandler {
                 String carKm = rs.getString("km");
 
 
-                CustomerCar customercar = new CustomerCar(customerID,customerName,customerLastName,carID,carMake,carModel,carRegnr,carKm);
+                CustomerCar customercar = new CustomerCar(customerID, customerName, customerLastName, carID, carMake, carModel, carRegnr, carKm);
                 ccjoin.add(customercar);
 
 
-                }
+            }
             //STEP 5: Clean-up environment
             rs.close();
             stmt.close();
@@ -263,22 +258,22 @@ public class CustomerHandler {
 
         CustomerCar selectedCustomer = ccjoin.get(selection - 1);
         System.out.println("Selected Customer: " + selectedCustomer.getForName());
-        System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
+        System.out.println("The car make and model is: " + selectedCustomer.getCarMake() + " " + selectedCustomer.getCarModel());
 
         if (selectedCustomer.getForName().contains("")) {
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Choose between the following options:");
             System.out.println("1. Add a new car");
-            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getForName() +" "+ selectedCustomer.getLastName());
+            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getForName() + " " + selectedCustomer.getLastName());
 
             String choice = scanner.nextLine();
             if (choice.equals("1")) {
                 carHandler.createCar();
                 carHandler.savecars();
+                System.out.println(("you have now added a car to the customer"));
             } else if (choice.equals("2")) {
                 // System.out.println(getCustomerCar());
-
 
             } else {
                 System.out.println("Invalid choice. Please choose 1 or 2.");
@@ -307,11 +302,9 @@ public class CustomerHandler {
 
         if (selectedCustomer.getForName().contains("")) {
             System.out.println("TEST");
-            //MovieMenu movieMenu = new MovieMenu();
-            //movieMenu.displayMenu(selectedMovies);
+
         }
     }*/
-//se hvilken bil kunden har
     public void search() {
         Scanner scanner = new Scanner(System.in);
 
@@ -331,18 +324,18 @@ public class CustomerHandler {
         }
 
         System.out.print("Enter the number of the customer you want to select: ");
-        int movieIndex = scanner.nextInt();
+        int customerIndex = scanner.nextInt();
         scanner.nextLine(); // consume the newline character
 
-        if (movieIndex < 1 || movieIndex > customers.size()) {
+        if (customerIndex < 1 || customerIndex > customers.size()) {
             System.out.println("Invalid customer number.");
             return;
         }
 
-        Customer selected = customers.get(movieIndex - 1);
+        Customer selected = customers.get(customerIndex - 1);
         System.out.println("Selected customer: " + selected.getName());
 
-        // Call your function on selectedMovie here
+        // Call your function on selectedCustomer here
         if (selected.getName().contains("")) {
             System.out.println("Test");
         }

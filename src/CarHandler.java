@@ -23,7 +23,7 @@ public class CarHandler {
         String regnr = scan.nextLine();
         System.out.println("Please enter a km: ");
         int km = Integer.parseInt(scan.nextLine());
-        cars.add(new Car(make,model,regnr,km));
+        cars.add(new Car(make, model, regnr, km));
     }
 
     public void savecars() {
@@ -129,7 +129,7 @@ public class CarHandler {
         Scanner carScanner = new Scanner(System.in);
         for (int i = 0; i < cars.size(); i++) {
             Car car = cars.get(i);
-            System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel()+ " , " + cars.get(i).getRegnr()+ " , " + cars.get(i).getKm());
+            System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel() + " , " + cars.get(i).getRegnr() + " , " + cars.get(i).getKm());
         }
 
         System.out.print("Please enter the number of the car you'd like to select: ");
@@ -148,11 +148,21 @@ public class CarHandler {
         if (selectedCar.getRegnr().contains("")) {
             System.out.println("Choose between the following options:");
             System.out.println("1. Add car to customer");
-            System.out.println("2. Reapir something on the car");
+            System.out.println("2. Repair something on the car");
             System.out.println("3. The car is ready?");
-            //MovieMenu movieMenu = new MovieMenu();
 
-            //movieMenu.displayMenu(selectedMovies);
+            String choice = scan.nextLine();
+            if (choice.equals("1")) {
+                //add car to customer
+
+            } else if (choice.equals("2")) {
+                //repair
+
+            } else if (choice.equals("3")) {
+                //car ready
+            } else {
+                System.out.println("Invalid choice. Please choose 1 or 2.");
+            }
         }
     }
 }
