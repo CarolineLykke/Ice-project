@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]" date="1684401322447" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 18/05/2023, 11.15 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Ice-project/Dashboard.class" />
+    <option name="AFTER_PATH" value="out/production/Ice-project/Dashboard.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]/Dashboard.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Ice-project/CustomerCar.class" />
+    <option name="AFTER_PATH" value="out/production/Ice-project/CustomerCar.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]/CustomerCar.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Ice-project/TextUI.class" />
+    <option name="AFTER_PATH" value="out/production/Ice-project/TextUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]/TextUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Ice-project/CustomerHandler.class" />
+    <option name="AFTER_PATH" value="out/production/Ice-project/CustomerHandler.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023,_11_15_[Changes]/CustomerHandler.class" />
+  </binary>
+</changelist>
