@@ -10,6 +10,7 @@ public class CustomerHandler {
     private static String lastName;
     private static int phoneNumber;
     private static String address;
+    private static int id;
     static List<Customer> customers = readCustomerFromDatabase();
     static List<CustomerCar> ccjoin = getCustomerCar();
 
@@ -28,7 +29,7 @@ public class CustomerHandler {
         int phoneNumber = Integer.parseInt(scan.nextLine());
         System.out.println("Please enter a address: ");
         String address = scan.nextLine();
-        customers.add(new Customer(email,name,lastName,phoneNumber,address));
+        customers.add(new Customer(email,name,lastName,phoneNumber,address,id));
     }
     public void saveUsers() {
         //UserHandler userHandler = new UserHandler();
@@ -100,8 +101,9 @@ public class CustomerHandler {
                 String lastName = rs.getString("lastName");
                 int phoneNumber = rs.getInt("phoneNumber");
                 String address = rs.getString("address");
+                int id = rs.getInt("id");
                 //Customer customers = new Customer(email, name, lastName, phoneNumber, address);
-                Customer customer = new Customer(email,name,lastName,phoneNumber,address);
+                Customer customer = new Customer(email,name,lastName,phoneNumber,address,id);
                 customers.add(customer);
                 //customers.add(new Customer(email,name,lastName,phoneNumber,address));
             }
@@ -151,7 +153,7 @@ public class CustomerHandler {
         }
 
         Customer selectedCustomer = customers.get(selection - 1);
-        System.out.println("Selected Customer: " + selectedCustomer.getName());
+        System.out.println("Selected Customer: " + selectedCustomer.getName()+ selectedCustomer.getid());
         //System.out.println("The car make and model is: " + selectedCar.getCarMake() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getName().contains("")) {
@@ -167,6 +169,7 @@ public class CustomerHandler {
                 carHandler.savecars();
             } else if (choice.equals("2")) {
                // System.out.println(getCustomerCar());
+
 
             } else {
                 System.out.println("Invalid choice. Please choose 1 or 2.");

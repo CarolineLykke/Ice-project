@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="car and customer">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023__10_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2023__10_26__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

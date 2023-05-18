@@ -9,13 +9,15 @@ public class Customer  {
     private String lastName;
     private int phoneNumber;
     private String address;
+    private int id;
 
-    public Customer(String email, String name, String lastName, int phoneNumber, String address) {
+    public Customer(String email, String name, String lastName, int phoneNumber, String address,int id) {
         this.email = email;
         this.name = name;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.id =id;
     }
 
 
@@ -33,6 +35,9 @@ public class Customer  {
 
     public  int getPhoneNumber() {
         return phoneNumber;
+    }
+    public  int getid() {
+        return id;
     }
 
     public  String getAddress() {
