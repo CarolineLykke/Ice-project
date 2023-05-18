@@ -152,7 +152,7 @@ public class CustomerHandler {
         System.out.println("Selected Customer: " + selectedMovies.getName());
 
         if (selectedMovies.getName().contains("")) {
-            System.out.println("TEST");
+            System.out.println("");
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
@@ -240,10 +240,11 @@ public class CustomerHandler {
         }
 
         CustomerCar selectedCustomer = ccjoin.get(selection - 1);
-        System.out.println("Selected Customer: " + selectedCustomer.getForName() +  "/n" + "The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
+        System.out.println("Selected Customer: " + selectedCustomer.getForName());
+        System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getForName().contains("")) {
-            System.out.println("TEST");
+            System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
@@ -312,13 +313,13 @@ public class CustomerHandler {
     }
 
     public List<CustomerCar> searchCustomerByName(String sName) {
-        List<CustomerCar> matchingMovies = new ArrayList<>();
+        List<CustomerCar> matchingNames = new ArrayList<>();
         for (CustomerCar customerCar : this.ccjoin) {
             String name = customerCar.getForName();
             if (name.toLowerCase().contains(sName.toLowerCase())) {
-                matchingMovies.add(customerCar);
+                matchingNames.add(customerCar);
             }
         }
-        return matchingMovies;
+        return matchingNames;
     }
 }

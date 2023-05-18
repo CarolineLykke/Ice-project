@@ -18,36 +18,37 @@ public class Dashboard {
                 switch (userChoice) {
                     case "1":
                         customerHandler.search();
-
+                        break;
+                    case "2":
                         //tasks
                         break;
 
-                    case "2":
+                    case "3":
                         mechanicHandler.readMechanicStatus();
                         mechanicHandler.showMechanics();
                         break;
 
-                    case "3":
+                    case "4":
                         customerHandler.createCustomer();
                         customerHandler.saveUsers();
                         break;
-                    case "4":
-                        customerHandler.getCustomerCar();
-                        customerHandler.showAllCustomerCar();
                     case "5":
                         customerHandler.getCustomerCar();
-                        customerHandler.showAllCarCustomer();
+                        customerHandler.showAllCustomerCar();
                     case "6":
+                        customerHandler.getCustomerCar();
+                        customerHandler.showAllCarCustomer();
+                    case "7":
                         rights = 2;
                         textUI.createUserMenu();
                         userHandler.saveUsers(rights);
                         break;
-                    case "7":
+                    case "8":
                         customerHandler.readCustomerFromDatabase();
                         customerHandler.showAllCustomers();
                         break;
 
-                    case "8":
+                    case "9":
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
                         ;
