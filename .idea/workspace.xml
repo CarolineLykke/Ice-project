@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
+    <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="car and customer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CarHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CustomerCar.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CustomerCar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/CustomerHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Dashboard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/TextUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CarHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CustomerCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerCar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CustomerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684396712771</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="car and customer">
+      <created>1684402776619</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684402776619</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +258,7 @@
     <MESSAGE value="userhandler" />
     <MESSAGE value="loging" />
     <MESSAGE value="car" />
-    <option name="LAST_COMMIT_MESSAGE" value="car" />
+    <MESSAGE value="car and customer" />
+    <option name="LAST_COMMIT_MESSAGE" value="car and customer" />
   </component>
 </project>

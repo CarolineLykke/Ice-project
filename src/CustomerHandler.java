@@ -14,6 +14,8 @@ public class CustomerHandler {
     //static List<CustomerCar> ccjoin = getCustomerCar();
 
     Scanner scan = new Scanner(System.in);
+    CarHandler carHandler = new CarHandler();
+
     public void createCustomer() {
 
         System.out.println("Please enter a email: ");
@@ -153,11 +155,27 @@ public class CustomerHandler {
         //System.out.println("The car make and model is: " + selectedCar.getCarMake() +" "+ selectedCustomer.getCarModel());
 
         if (selectedCustomer.getName().contains("")) {
+           Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Choose between the following options:");
+            System.out.println("1. Add a new car");
+            System.out.println("2. Show the car that belongs to " + " " + selectedCustomer.getName() +" "+ selectedCustomer.getLastname());
+
+            String choice = scanner.nextLine();
+            if (choice.equals("1")) {
+                carHandler.createCar();
+                carHandler.savecars();
+            } else if (choice.equals("2")) {
+                System.out.println("yes");
+            } else {
+                System.out.println("Invalid choice. Please choose 1 or 2.");
+            }
+        }
             //System.out.println("The car make and model is: " + selectedCustomer.getCarMake() +" "+ selectedCustomer.getCarModel());
             //MovieMenu movieMenu = new MovieMenu();
             //movieMenu.displayMenu(selectedMovies);
         }
-    }
+
     /*public static List<CustomerCar> getCustomerCar() {
         List<CustomerCar> ccjoin = new ArrayList<>();
         Connection conn = null;
