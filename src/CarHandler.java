@@ -146,8 +146,6 @@ public class CarHandler {
 
         if (selectedCar.getMake().contains("")) {
             System.out.println("TEST");
-            //MovieMenu movieMenu = new MovieMenu();
-            //movieMenu.displayMenu(selectedMovies);
         }
     }
 }
