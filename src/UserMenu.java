@@ -18,6 +18,5 @@ public class UserMenu {
             default:
                 System.out.println("Goodbye");
         }
-        //  userHandler.saveUsers();
     }
 }
