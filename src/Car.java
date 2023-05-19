@@ -4,13 +4,15 @@ public class Car {
     private String model;
     private String regnr;
     private int km;
+    private int id;
 
-    public Car(String make, String model, String regnr, int km) {
+    public Car(String make, String model, String regnr, int km,int id) {
         //this.id = id;
         this.make = make;
         this.model = model;
         this.regnr = regnr;
         this.km = km;
+        this.id=id;
     }
 
     /*public int getId() {
@@ -31,5 +33,8 @@ public class Car {
 
     public int getKm() {
         return km;
+    }
+    public int getid() {
+        return id;
     }
 }

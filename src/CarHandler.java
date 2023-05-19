@@ -8,6 +8,7 @@ public class CarHandler {
     private static String model;
     private static String regnr;
     private static int km;
+    private static int id;
 
     static List<Car> cars = readCarFromDatabase();
 
@@ -23,7 +24,7 @@ public class CarHandler {
         String regnr = scan.nextLine();
         System.out.println("Please enter a km: ");
         int km = Integer.parseInt(scan.nextLine());
-        cars.add(new Car(make, model, regnr, km));
+        cars.add(new Car(make, model, regnr, km,id));
     }
 
     public void savecars() {
@@ -92,7 +93,7 @@ public class CarHandler {
                 String model = rs.getString("model");
                 String regnr = rs.getString("regnr");
                 int km = rs.getInt("km");
-                Car car = new Car(make, model, regnr, km);
+                Car car = new Car(make, model, regnr, km,id);
                 cars.add(car);
                 //customers.add(new Customer(email,name,lastName,phoneNumber,address));
             }
