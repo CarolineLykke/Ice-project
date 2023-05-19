@@ -1,21 +1,16 @@
-import java.io.File;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Userhandler {
-    static final String DB_URL = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7617247";
-
-    //  Database credentials
-    static final String USER = "sql7617247";
-    static final String PASS = "nQyBL7eZqc";
     static ArrayList<User> users = new ArrayList<>();
-    File file;
+
 
     private static String currentUser;
     private static String currentId;
     private static int currentRights;
 
-    public boolean login(String id, String username, String password, int rights) {
+    public boolean login(String username, String password, String id, int rights) {
         if (username == null || password == null) {
             return false;
         }
@@ -58,7 +53,7 @@ public class Userhandler {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading users");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             //STEP 3: Execute a query
             System.out.println("Creating statement...");
@@ -103,7 +98,7 @@ public class Userhandler {
         }//end try
     }
 
-    public void saveUsers() {
+    public void saveUsers(int rights) {
         //UserHandler userHandler = new UserHandler();
 
         Connection conn = null;
@@ -114,10 +109,10 @@ public class Userhandler {
             Class.forName("com.mysql.jdbc.Driver");
             //STEP 2: Open a connection
             System.out.println("Connecting to database loading saveusers");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
 
             // the mysql insert statement
-            String sql = "INSERT INTO streaming.users (UserName,password) VALUES (?, ?)";
+            String sql = "INSERT INTO users (UserName,password,rights) VALUES (?, ?,?)";
 
             //INSERT INTO streaming.users (UserName,password) VALUES (?, ?)
 
@@ -126,7 +121,9 @@ public class Userhandler {
             for(User user:users){
                 stmt.setString ( 1,user.getUsername());
                 stmt.setString ( 2,user.getPassword());
+                stmt.setInt ( 3,rights);
             }
+
 
             // execute the preparedstatement
             stmt.executeUpdate();
@@ -171,5 +168,7 @@ public class Userhandler {
     public static int getRights(){
         return currentRights;
     }
+
+
 
 }

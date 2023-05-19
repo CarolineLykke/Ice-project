@@ -1,6 +1,4 @@
-import java.util.Random;
 import java.util.Scanner;
-import java.util.UUID;
 
 
 public class TextUI {
@@ -22,11 +20,18 @@ public class TextUI {
         String username = scanner.nextLine();
         System.out.println("Please enter your password: ");
         String password = scanner.nextLine();
-      String id ="1";
-        int rights = 1;
+        String id = Userhandler.getId();
+        int rights = Userhandler.getRights();
         if (userhandler.login(username, password, id, rights)) {
             System.out.println("Welcome " + username);
-            //dashBoard.setupDashboard();
+            if (Userhandler.getRights()==1){
+                Dashboard.setupDashboardAdmin();
+            } else if (Userhandler.getRights() == 2) {
+                Dashboard.setupDashboardMechanic();
+            } else if (Userhandler.getRights() == 3) {
+                Dashboard.setupDashboardCustomer();
+            }
+
         } else {
             System.out.println("Sorry, the username or password is incorrect");
             loginMenu();
@@ -36,33 +41,52 @@ public class TextUI {
 
     public void createUserMenu() {
         System.out.println("Please enter a username: ");
-        String userName = scanner.nextLine();
+        String username = scanner.nextLine();
         System.out.println("Please enter a password: ");
         String password = scanner.nextLine();
-        String id = "1";
-        int rights = 1;
-        if (Userhandler.createUser(userName, password, id, rights)) {
-            System.out.println("Welcome " + userName);
-
+        String id = Userhandler.getId();
+        int rights = Userhandler.getRights();
+        if (userhandler.createUser(username, password, id, rights)) {
+            System.out.println("Welcome " + username);
         } else {
             System.out.println("Sorry, the username or password can not be used try agin:");
             createUserMenu();
         }
     }
 
-    public String startMenu() {
-        System.out.println("Welcome to Mustafa's movies, you can now choose one of the options" + "\n" + "1: Search for a movie" + "\n" + "2: Search a movie in a specific category" + "\n" + "3: The list of the movies you have watched" + "\n" + "4: The list of the movies you have saved" + "\n" + "5: Show all movies");
+    public String startMenuAdmin() {
+        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options"+ "\n" + "1: General search "+ "\n" + "2: See tasks" + "\n" + "3: Mechanic status" + "\n" + "4: Add Customer" + "\n" + "5: Add Mechanic" + "\n" + "6: Show all Customers" + "\n"+ "7: show all cars");
+        return scanner.nextLine();
+    }
+    public String startMenuMechanic() {
+        System.out.println("Hey Mechanic: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See tasks" + "\n" + "2: Update your status" + "\n" + "3: See other Mechanics" + "\n" + "5: Show all Customers");
+        return scanner.nextLine();
+    }
+
+    public String startMenuCustomer() {
+        System.out.println("Hey, Customer: Welcome to Mustafa's garage, you can now choose one of the options" + "\n" + "1: See status" + "\n" + "2: See car data");
         return scanner.nextLine();
     }
 
     public void backToMenu() {
-        System.out.println("Press 1 to go back to the start menu, or 2 to close the application.");
+        System.out.println("Press 1 to go back to the start menu, or 2 to LogOut or 3 to close the application.");
         String choice = scanner.nextLine();
         switch (choice) {
             case "1":
-                //DashBoard.setupDashboard();
+                if (Userhandler.getRights()==1) {
+                    Dashboard.setupDashboardAdmin();
+                } else if (Userhandler.getRights()==2) {
+                    Dashboard.setupDashboardMechanic();
+                } else if (Userhandler.getRights()==3) {
+                    Dashboard.setupDashboardCustomer();
+                }
                 break;
             case "2":
+                System.out.println("Logging out...");
+                UserMenu userMenu = new UserMenu();
+                userMenu.setupUserMenu();
+                break;
+            case "3":
                 System.out.println("Closing the application...");
                 System.exit(0);
                 break;
@@ -72,5 +96,4 @@ public class TextUI {
                 break;
         }
     }
-
 }

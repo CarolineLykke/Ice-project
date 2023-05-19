@@ -1,5 +1,14 @@
-public class Foreman extends User{
+public class Foreman {
+    String id;
+    String username;
+    String password;
+    int rights;
+
     public Foreman(String id, String username, String password, int rights) {
-        super(id, username, password, rights);
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.rights = rights;
     }
+
 }
