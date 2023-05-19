@@ -15,7 +15,7 @@ public class ChatApplication {
             int userId = scanner.nextInt();
 
             // Item ID
-            int itemId = 1; // Assuming the item ID is 1
+            int itemId = 2; // Assuming the item ID is 1
 
             // Prepare and execute the SQL query to retrieve chat messages
             String sql = "SELECT * FROM chat_messages WHERE conversation_id = ?";
