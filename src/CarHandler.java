@@ -46,6 +46,7 @@ public class CarHandler {
             // create the mysql insert preparedstatement
             stmt = conn.prepareStatement(sql);
             for (Car car : cars) {
+                stmt.setString(1, car.getId());
                 stmt.setString(1, car.getMake());
                 stmt.setString(2, car.getModel());
                 stmt.setString(3, car.getRegnr());
@@ -88,6 +89,7 @@ public class CarHandler {
             //STEP 4: Extract data from result set
             while (rs.next()) {
                 //Retrieve by column name
+                String id = rs.getString("id");
                 String make = rs.getString("make");
                 String model = rs.getString("model");
                 String regnr = rs.getString("regnr");
@@ -125,11 +127,19 @@ public class CarHandler {
         return cars;
     }
 
+    public void showAllCarsToForeman() {
+        Scanner carScanner = new Scanner(System.in);
+        for (int i = 0; i < cars.size(); i++) {
+            Car car = cars.get(i);
+            System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel() + " , " + cars.get(i).getRegnr() + " , " + cars.get(i).getKm());
+        }
+    }
+
     public void showAllCars() {
         Scanner carScanner = new Scanner(System.in);
         for (int i = 0; i < cars.size(); i++) {
             Car car = cars.get(i);
-            System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel()+ " , " + cars.get(i).getRegnr()+ " , " + cars.get(i).getKm());
+            System.out.println(cars.get(i).getId() + " " + cars.get(i).getMake() + " , " + cars.get(i).getModel()+ " , " + cars.get(i).getRegnr()+ " , " + cars.get(i).getKm());
         }
 
         System.out.print("Please enter the number of the Customer you'd like to select: ");

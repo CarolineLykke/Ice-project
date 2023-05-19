@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="64fe339e-11d4-40de-86f6-c9170ca4ee00" name="Changes" comment="loging">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Ice-project/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Ice-project/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,5 +234,15 @@
     <MESSAGE value="userhandler" />
     <MESSAGE value="loging" />
     <option name="LAST_COMMIT_MESSAGE" value="loging" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

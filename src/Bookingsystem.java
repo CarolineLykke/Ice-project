@@ -21,30 +21,14 @@ public class Bookingsystem {
     public void bookingAMechanic() {
         MechanicHandler mechanicHandler = new MechanicHandler();
 
+        System.out.println("You can book the following mechanics:");
+
         // shows all available mechanic and foreman can choose one for an assignment
+
         mechanicHandler.showMechanics();
         mechanicHandler.selectMechanic();
+        mechanicHandler.bookMechanic();
 
-        // Foreman provides information about the car and the assignment
-        System.out.println("Enter the model of the car:");
-        String carModel = scan.nextLine();
-
-        System.out.println("Enter the make of the car:");
-        String carMake = scan.nextLine();
-
-        System.out.println("Enter the error of the car:");
-        String carError = scan.nextLine();
-
-         // setter for mechanicStatus and assignments
-        String assignment = "Car Model: " + carModel + ", Make: " + carMake + ", Error: " + carError;
-        mechanic.setAssignment(assignment);
-
-        // Changes status on the mechanic
-        mechanic.setStatus(false);
-
-        System.out.println(mechanic.getId() + "Mechanic: " + mechanic.getUsername() + " is booked for the assignment: " + assignment);
     }
-
-
 
 }

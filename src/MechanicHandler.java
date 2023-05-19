@@ -6,7 +6,14 @@ import java.util.Scanner;
 public class MechanicHandler {
     static List<Mechanic> mechanics = readMechanicStatus();
 
+    private TextUI textUI;
+
     private static String id;
+
+    private Mechanic mechanic;
+    private CarHandler carHandler;
+
+    Scanner scan;
 
 
     public static List<Mechanic> readMechanicStatus() {
@@ -68,13 +75,20 @@ public class MechanicHandler {
     }
 
     public void showMechanics() {
-        for (int i = 0; i < mechanics.size(); i++) {
-            Mechanic mechanic = mechanics.get(i);
-            if (mechanic.isStatus() == true) {
-                System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+        try {
+            for (int i = 0; i < mechanics.size(); i++) {
+                Mechanic mechanic = mechanics.get(i);
+                if (mechanic.isStatus() == true) {
+                    System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+                }
             }
+            if (mechanics.isEmpty()) {
+                System.out.println("No mechanics are available right now");
+                textUI.backToMenu();
+            }
+        } catch (NullPointerException e) {
+            System.out.println("can't access the mechanics list");
         }
-        System.out.println("Mechanic not available");
     }
 
     // a function over Mechanics that aren't available and what assignment they are working on
@@ -87,8 +101,10 @@ public class MechanicHandler {
                 String mechanicInfo = (i + 1) + ". " + mechanics.get(i).getId() + mechanic.getUsername()+ ": " + mechanic.getAssignment();
                  // HERE call assignment function or set assignment??
                 workingMechanics.add(mechanicInfo); // and adding it to the workingMechanics array
+                System.out.println(mechanicInfo);
             } else {
                 System.out.println("All mechanics are available");
+                textUI.backToMenu();
             }
 
         }
@@ -110,14 +126,97 @@ public class MechanicHandler {
         System.out.println("Selected Mechanic: " + selectedMechanic.getId());
 
         if (selectedMechanic.getId().contains("")) {
-            System.out.println("TEST");
+            System.out.println(getId());
         }
     }
+
+    public void bookMechanic() {
+        try {
+            scan = new Scanner(System.in);
+
+            // call the car db and add a mechanic to a car(connect a mechanic id with a car regnr)
+            // Create an instance of the CarHandler class
+            CarHandler carHandler = new CarHandler();
+            carHandler.readCarFromDatabase();
+            carHandler.showAllCarsToForeman();
+            System.out.print("Please enter the number of the car you'd like to select: ");
+            int selection = scan.nextInt();
+            scan.nextLine();
+
+            if (selection < 1 || selection > CarHandler.cars.size()) {
+                System.out.println("Invalid Car number.");
+                return;
+            }
+
+            Car selectedCar = CarHandler.cars.get(selection - 1);
+            String carId = selectedCar.getId();
+
+            for (int i = 0; i < mechanics.size(); i++) {
+                Mechanic mechanic = mechanics.get(i);
+                if (mechanic.isStatus() == true) {
+                    // setter for mechanicStatus and assignments
+                    mechanic.setAssignment(carId);
+                    // Changes status on the mechanic
+                    mechanic.setStatus(false);
+                    System.out.println((i + 1) + ". " + carId + "," + mechanics.get(i).isStatus());
+                    // System.out.println(mechanic.getId() + "Mechanic: " + mechanic.getUsername() + " is booked for the assignment: " + assignment);
+                }
+            }
+            // Sync the changes back to the database
+            syncMechanicStatus();
+        } catch (NullPointerException e) {
+            System.out.println("can't access the mechanics list");
+        }
+    }
+
+    public void syncMechanicStatus() {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            // Register JDBC driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            // Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(dbconection.DB_URL, dbconection.USER, dbconection.PASS);
+
+            // Update the status for each mechanic in the database
+            for (Mechanic mechanic : mechanics) {
+                String sql = "UPDATE status SET status = ?, assignment = ? WHERE id = ?";
+                stmt = conn.prepareStatement(sql);
+                stmt.setBoolean(1, mechanic.isStatus());
+                stmt.setString(2, mechanic.getAssignment());
+                stmt.setString(3, mechanic.getId());
+                stmt.executeUpdate();
+                stmt.close();
+            }
+
+            // Close the connection
+            conn.close();
+        } catch (SQLException se) {
+            se.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // Close resources
+            try {
+                if (stmt != null)
+                    stmt.close();
+            } catch (SQLException se2) {
+            }
+            try {
+                if (conn != null)
+                    conn.close();
+            } catch (SQLException se) {
+                se.printStackTrace();
+            }
+        }
+    }
+
+
 
     public static String getId() {
         return id;
     }
-
-
 
 }

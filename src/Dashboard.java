@@ -7,6 +7,7 @@ public class Dashboard {
         static MechanicHandler mechanicHandler = new MechanicHandler();
         static CustomerHandler customerHandler = new CustomerHandler();
         static CarHandler carHandler = new CarHandler();
+        static Bookingsystem bookingSystem = new Bookingsystem();
 
 
         public static void setupDashboardAdmin(){
@@ -51,6 +52,12 @@ public class Dashboard {
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
                         ;
+                        break;
+                    case "9":
+                        bookingSystem.bookingAMechanic();
+                        break;
+                    case "10":
+                        mechanicHandler.getWorkingMechanics();
                         break;
                 }
                 textUI.backToMenu();
