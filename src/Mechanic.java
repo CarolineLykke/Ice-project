@@ -18,10 +18,11 @@ public class Mechanic {
         this.Status=status;
     }
 
-    public Mechanic(String id, boolean status, String assignment) {
+    public Mechanic(String id, boolean status, String assignment, String username) {
         this.id=id;
         this.Status=status;
         this.assignment = assignment;
+        this.username = username;
     }
 
     public boolean isStatus() {

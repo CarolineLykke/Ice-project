@@ -126,6 +126,12 @@ public class CarHandler {
         return cars;
     }
 
+    public void showAllCarsToForeman() {
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println((i + 1) + ". " + cars.get(i).getMake() + " , " + cars.get(i).getModel() + " , " + cars.get(i).getRegnr() + " , " + cars.get(i).getKm());
+        }
+    }
+
     public void showAllCars() {
         Scanner carScanner = new Scanner(System.in);
         for (int i = 0; i < cars.size(); i++) {

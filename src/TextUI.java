@@ -55,7 +55,7 @@ public class TextUI {
     }
 
     public String startMenuAdmin() {
-        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options"+ "\n" + "1: General search "+ "\n" + "2: See tasks" + "\n" + "3: Mechanic status" + "\n" + "4: Add Customer" + "\n" + "5: Add Mechanic" + "\n" + "6: Show all Customers" + "\n"+ "7: show all cars");
+        System.out.println("Hey admin: Welcome to Mustafa's garage, you can now choose one of the options"+ "\n" + "1: General search "+ "\n" + "2: See tasks" + "\n" + "3: Mechanic status" + "\n" + "4: Add Customer" + "\n" + "5: Add Mechanic" + "\n" + "6: Show all Customers" + "\n"+ "7: show all cars" + "\n" + "8: Book a Mechanic");
         return scanner.nextLine();
     }
     public String startMenuMechanic() {

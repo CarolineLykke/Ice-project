@@ -8,6 +8,7 @@ public class Dashboard {
         static CustomerHandler customerHandler = new CustomerHandler();
         static CarHandler carHandler = new CarHandler();
 
+        static Bookingsystem bookingSystem = new Bookingsystem();
 
         public static void setupDashboardAdmin(){
 
@@ -45,7 +46,10 @@ public class Dashboard {
                     case "7":
                         carHandler.readCarFromDatabase();
                         carHandler.showAllCars();
-                        ;
+
+                        break;
+                    case "8":
+                        bookingSystem.bookingAMechanic();
                         break;
                 }
                 textUI.backToMenu();
