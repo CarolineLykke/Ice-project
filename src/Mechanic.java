@@ -1,6 +1,3 @@
-import java.sql.*;
-import java.util.ArrayList;
-
 public class Mechanic {
 
     boolean Status;
@@ -18,10 +15,11 @@ public class Mechanic {
         this.Status=status;
     }
 
-    public Mechanic(String id, boolean status, String assignment) {
+    public Mechanic(String id, boolean status, String assignment, String username) {
         this.id=id;
         this.Status=status;
         this.assignment = assignment;
+        this.username = username;
     }
 
     public boolean isStatus() {
@@ -35,6 +33,7 @@ public class Mechanic {
     public String getId() {
         return id;
     }
+
 
     public String getUsername() {
         return username;

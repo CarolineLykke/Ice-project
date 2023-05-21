@@ -1,5 +1,5 @@
 public class Car {
-    private String id;
+    private static String id;
     private String make;
     private String model;
     private String regnr;
@@ -13,7 +13,7 @@ public class Car {
         this.km = km;
     }
 
-    public String getId() {
+    public static String getId() {
         return id;
     }
 

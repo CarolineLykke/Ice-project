@@ -4,10 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CarHandler {
-    private static String make;
-    private static String model;
-    private static String regnr;
-    private static int km;
+
 
     static List<Car> cars = readCarFromDatabase();
 
@@ -47,10 +44,10 @@ public class CarHandler {
             stmt = conn.prepareStatement(sql);
             for (Car car : cars) {
                 stmt.setString(1, car.getId());
-                stmt.setString(1, car.getMake());
-                stmt.setString(2, car.getModel());
-                stmt.setString(3, car.getRegnr());
-                stmt.setInt(4, car.getKm());
+                stmt.setString(2, car.getMake());
+                stmt.setString(3, car.getModel());
+                stmt.setString(4, car.getRegnr());
+                stmt.setInt(5, car.getKm());
 
             }
 

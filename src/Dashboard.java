@@ -56,9 +56,6 @@ public class Dashboard {
                     case "9":
                         bookingSystem.bookingAMechanic();
                         break;
-                    case "10":
-                        mechanicHandler.getWorkingMechanics();
-                        break;
                 }
                 textUI.backToMenu();
             }

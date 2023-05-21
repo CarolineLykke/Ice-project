@@ -8,11 +8,6 @@ public class MechanicHandler {
 
     private TextUI textUI;
 
-    private static String id;
-
-    private Mechanic mechanic;
-    private CarHandler carHandler;
-
     Scanner scan;
 
 
@@ -41,8 +36,9 @@ public class MechanicHandler {
                 String id = rs.getString("id");
                 boolean status = rs.getBoolean("status");
                 String assignment = rs.getString("assignment");
+                String username = rs.getString("username");
                 //Create mechanic object and add to list
-                Mechanic mechanic = new Mechanic(id,status,assignment);
+                Mechanic mechanic = new Mechanic(id,status,assignment,username);
                 mechanics.add(mechanic);
             }
 
@@ -79,7 +75,7 @@ public class MechanicHandler {
             for (int i = 0; i < mechanics.size(); i++) {
                 Mechanic mechanic = mechanics.get(i);
                 if (mechanic.isStatus() == true) {
-                    System.out.println((i + 1) + ". " + mechanics.get(i).getId() + "," + mechanics.get(i).isStatus());
+                    System.out.println((i + 1) + ". " + mechanics.get(i).getUsername());
                 }
             }
             if (mechanics.isEmpty()) {
@@ -92,13 +88,13 @@ public class MechanicHandler {
     }
 
     // a function over Mechanics that aren't available and what assignment they are working on
-    public ArrayList<String> getWorkingMechanics() {
+    /*public ArrayList<String> getWorkingMechanics() {
         ArrayList<String> workingMechanics = new ArrayList<>();
         for (int i = 0; i < mechanics.size(); i++) {
             Mechanic mechanic = mechanics.get(i); // initialize mechanic
             if (mechanic.isStatus() == false) {
                 //names all the unavailable mechanics with id and their assignments
-                String mechanicInfo = (i + 1) + ". " + mechanics.get(i).getId() + mechanic.getUsername()+ ": " + mechanic.getAssignment();
+                String mechanicInfo = (i + 1) + ". " + mechanics.get(i).getId() + mechanic.getUsername()+ ": " + Car.();
                  // HERE call assignment function or set assignment??
                 workingMechanics.add(mechanicInfo); // and adding it to the workingMechanics array
                 System.out.println(mechanicInfo);
@@ -109,7 +105,7 @@ public class MechanicHandler {
 
         }
         return workingMechanics;
-    }
+    }*/
 
     public void selectMechanic(){
         Scanner mechanicScanner = new Scanner(System.in);
@@ -125,9 +121,7 @@ public class MechanicHandler {
         Mechanic selectedMechanic = mechanics.get(selection - 1);
         System.out.println("Selected Mechanic: " + selectedMechanic.getId());
 
-        if (selectedMechanic.getId().contains("")) {
-            System.out.println(getId());
-        }
+        selectedMechanic.getId().contains("");
     }
 
     public void bookMechanic() {
@@ -149,17 +143,16 @@ public class MechanicHandler {
             }
 
             Car selectedCar = CarHandler.cars.get(selection - 1);
-            String carId = selectedCar.getId();
+            String carRegNr = selectedCar.getRegnr();
 
             for (int i = 0; i < mechanics.size(); i++) {
                 Mechanic mechanic = mechanics.get(i);
                 if (mechanic.isStatus() == true) {
                     // setter for mechanicStatus and assignments
-                    mechanic.setAssignment(carId);
+                    mechanic.setAssignment(carRegNr);
                     // Changes status on the mechanic
                     mechanic.setStatus(false);
-                    System.out.println((i + 1) + ". " + carId + "," + mechanics.get(i).isStatus());
-                    // System.out.println(mechanic.getId() + "Mechanic: " + mechanic.getUsername() + " is booked for the assignment: " + assignment);
+                    System.out.println(mechanics.get(i).getId() + ". " + "You have now assigned " + mechanics.get(i).getUsername() + " to car: " + carRegNr);
                 }
             }
             // Sync the changes back to the database
@@ -213,10 +206,5 @@ public class MechanicHandler {
         }
     }
 
-
-
-    public static String getId() {
-        return id;
-    }
 
 }
